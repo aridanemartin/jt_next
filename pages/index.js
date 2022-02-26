@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import indexCover from '../public/images/portada4.jpg';
 import BlogItem from '@components/BlogItem/BlogItem';
 import Separador from "@components/Separador/Separador";
-import IntroBio from "@components/introBio/introBio";
+import IntroBio from "@components/IntroBio/IntroBio";
 import HeroTemplate from '@components/HeroTemplate/HeroTemplate';
 import Link from 'next/link';
 import sanityClient from '../client';
