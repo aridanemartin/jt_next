@@ -1,0 +1,105 @@
+.postImageHero{
+    position: relative;
+    height: 60vh;
+    width: 100vw;
+    margin-top: 10rem;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.imageHero{
+    filter: brightness(50%);
+}
+
+.title{
+    font-family: 'Staatliches', cursive;
+    font-size: 4rem;
+    
+    color: white;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 6rem;
+    text-align: center;
+    
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.contentWrapper section{
+    max-width: 1440px;
+    margin: 0 auto;
+
+    font-family: Segoe UI, Arial;
+    text-align: center; 
+    padding: 1rem 0rem;
+
+}
+
+.postImage{
+    position: relative;
+    margin: 0 auto;
+    max-width: 40rem;
+    height: 20rem;    
+}
+
+.contentWrapper section p{
+    font-size: 1.2rem;
+    padding: 0rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.contentWrapper section{
+    margin-bottom: 1rem;
+}
+
+.linksWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.authorData{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.dataWrap{
+    width: 20rem;
+    display: grid;
+    grid-template-areas: "author photo"
+                        "date photo";
+    grid-gap: 0.4rem;
+    padding: 3rem 0rem;
+}
+
+.date{
+    grid-area: date;
+    margin: 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+.author{
+    grid-area: author;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.authorImage{
+    grid-area: photo;
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    clip-path: circle(50% at 50% 50%);
+    
+}

@@ -1,0 +1,20 @@
+.separadorWrap{
+    max-width: 1140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0 auto;
+    text-align: center;
+}
+
+.separadorTitle{
+    font-family: Cormorant, Playfair;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.separadorText{
+    font-size: 1.2rem;
+}

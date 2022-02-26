@@ -1,0 +1,29 @@
+.imgWrapper{
+    /* display: none; */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.postTitle{
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin: 1rem 0rem;
+}
+
+.postAuthor{
+    font-family: 'Cormorant', serif;
+    color: slategray;
+}
+
+.postDate{
+    font-family: 'Cormorant', serif;
+    color: darkgray;
+}
+
+.smallDivider{
+    height: 1rem;
+    width: 3rem;
+    border-bottom: 1px solid slategray;
+}

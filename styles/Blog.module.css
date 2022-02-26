@@ -1,0 +1,17 @@
+.postsContainer{
+
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.postImageWrap img{
+    overflow: hidden;
+    width: 50rem;
+    height: 20rem;
+    object-fit: cover;
+
+}

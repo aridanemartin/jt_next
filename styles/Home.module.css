@@ -1,0 +1,103 @@
+.latestPosts{
+  position: relative;
+  max-width: 1140px;
+  height: 50rem;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.postPreviewWrapper{
+  display: grid;
+  cursor: pointer;
+  grid-template-areas: 
+  "picture"
+  "title"
+  "author";
+  grid-template-rows: 20rem auto 25rem;
+}
+
+.imgWrapper {
+  height: 20rem;
+  position: relative;
+  
+}
+
+.postTitle{
+  grid-area: title;
+  text-align: center;
+  font-family: 'Cormorant', serif;
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.dataWrap{
+  height: 6rem;
+  grid-area: author;
+  display: grid;
+  grid-template-areas: "author photo"
+                      "date photo";
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.1rem;
+}
+
+.authorData{
+  
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.date{
+  grid-area: date;
+  margin: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.author{
+  grid-area: author;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.2rem;
+}
+
+.authorImage{
+  grid-area: photo;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  clip-path: circle(50% at 50% 50%);
+  
+}
+
+.blogAnchor{
+
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-family: 'Cormorant';
+  font-size: 1.5rem;
+  width: 10rem;
+  border: 1px solid #243648;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+
+}
+
+
+
+

@@ -1,0 +1,301 @@
+
+.swiper, .swiper {
+  padding: 3rem 0rem;
+  padding-left: 1rem;
+  max-width: 1140px;
+  width: 90%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper, .swiper-slide{
+
+    display: flex;
+    flex-direction: column;
+
+    
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+.swiper1, 
+.swiper2,
+.swiper3, 
+.swiper4, 
+.swiper5, 
+.swiper6, 
+.swiper7, 
+.swiper8, 
+.swiper9, 
+.swiper10, 
+.swiper11, 
+.swiper12
+{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+
+  background-size: cover;
+  
+  padding: 0.5rem;
+  height: 20rem;
+  border-radius: 10%;
+
+}
+
+.swiper1 h3, 
+.swiper2 h3,
+.swiper3 h3, 
+.swiper4 h3,
+.swiper5 h3, 
+.swiper6 h3,
+.swiper7 h3, 
+.swiper8 h3,
+.swiper9 h3,
+.swiper10 h3,
+.swiper11 h3,
+.swiper12 h3
+{
+  width: 20ch;
+  font-size: 1.6rem;
+  text-align: center;
+  grid-area: titulo;
+  /* font-family: 'Cormorant', serif; */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight:700;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px black;
+}
+
+.swiper1{
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.5)
+  ),url(../public/images/diabetesCuadrado.jpg);
+  background-position: bottom;
+  
+}
+.swiper2{
+  background-image: url(../public/images/tiroides3.jpg);
+  background-position: bottom;
+}
+
+.swiper3{
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.5)
+  ),url(../public/images/educacionNutricional3.jpg);
+  background-position: 25% 50%;
+}
+
+.swiper4{
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.5)
+  ),url(../public/images/diabetesGestacional.jpg);
+  background-position: bottom;
+}
+
+.swiper5{
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.5)
+  ),url(../public/images/ovarioPoliquistico.jpg);
+  background-position: bottom;
+}
+
+.swiper6{
+  background-image: url(../public/images/hormonalFemenina.jpg);
+  background-position: bottom;
+}
+
+.swiper7{
+  background-image: url(../public/images/sobrecrecimientoBacteriano.jpg);
+  background-position: bottom;
+}
+
+.swiper8{
+  background-image: url(../public/images/obesidad.jpg);
+  background-position: bottom;
+}
+
+.swiper9{
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.5)
+  ),url(../public/images/colesterol.jpg);
+  background-position: bottom;
+}
+
+.swiper10{
+  background-image: url(../public/images/videoconferencia.jpg);
+  background-position: bottom;
+}
+
+.swiper11{
+  background-image: url(../public/images/fertilidad.jpg);
+  background-position: bottom;
+}
+
+.swiper12{
+  background-image: url(../public/images/hipofosis.jpg);
+  background-position: bottom;
+}
+
+
+
+
+
+
+
+
+/* // .custom-shape-divider-bottom-1626950069 {
+//     margin-top: 60px;
+
+//     position: relative;
+//     width: 100%;
+//     transform: rotate(180deg);
+// }
+
+// .custom-shape-divider-bottom-1626950069 svg {
+//     position: absolute;
+//     display: block;
+//     width: calc(158% + 1.3px);
+//     height: 70px;
+//     overflow: hidden;
+// }
+
+// .custom-shape-divider-bottom-1626950069 .shape-fill {
+//     fill: #75559833;
+// }
+
+
+// .SliderBackground{
+//     background: rgba(117, 85, 152, 0.2);
+// }
+
+// .SliderContainer {
+//     padding: 2rem 0;
+//     margin: 0 auto;
+//     max-width: 1140px;
+//     height: auto;
+
+//     ;
+// }
+
+// .swiper-container {
+//     width: 100%;
+//     height: 100%;
+// }
+
+// .swiper-slide {
+    
+//     text-align: center;
+//     background: rgba(117, 85, 152, 0.2);
+//     border-radius: 1rem;
+//     box-shadow: 0.1rem 0.1rem 0.1rem rgba(89, 52, 133, 0.2);
+
+//     display: flex;
+//     flex-direction: column;
+
+//     h3{
+//         font-size: 1.3rem;
+//         padding: 1rem;
+//         color: blue;
+//     }
+
+//     img {
+//         padding: 0.7rem;
+//         margin: 0 auto;
+//         display: block;
+//         width: 30%;
+//         object-fit: cover;
+//     }
+//     ul{
+//         list-style: none;
+//         padding: 1rem;
+//         color: rgba(117, 85, 152);
+//         font-size: 1rem;
+//         padding-bottom: 3rem;
+//     }
+//     ul li{
+//         color: blue;
+//         font-size: 1rem;
+//         padding: 0.5rem;
+//         font-weight: 500;
+//     }
+// }
+
+// .swiper-button-prev, .swiper-button-next{
+//     color: blue;
+    
+// }
+// .swiper-pagination-bullet-active{
+//     background: blue;
+// }
+
+// @media screen and (min-width: 320px) {
+//     .swiper-container {
+//     width: 320px;
+   
+//     }
+
+// }
+// @media screen and (min-width: 768px) {
+// .swiper-container {
+//     width: 768px;
+  
+// }
+// }
+
+// @media screen and (min-width: 1024px) {
+//     .swiper-container {
+//         width: 1024px;
+       
+//     }
+// }
+
+
+
+
+// .custom-shape-divider-top-1626950293 {
+//     position: relative;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     overflow: hidden;
+//     line-height: 0;
+// }
+
+// .custom-shape-divider-top-1626950293 svg {
+//     position: relative;
+//     display: block;
+//     width: calc(158% + 1.3px);
+//     height: 70px;
+// }
+
+// .custom-shape-divider-top-1626950293 .shape-fill {
+//     fill: #75559833;
+// }
+
+// .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+//     bottom: 25px;
+//     left: 0;
+//     width: 100%;
+// } */

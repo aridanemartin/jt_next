@@ -1,0 +1,121 @@
+.Bio {
+    position: relative;
+    display: grid;
+    grid-template-areas: "foto title" "foto text" "foto button" "logos logos";
+    grid-template-columns: 50% 50%;
+    margin: 0 auto;
+    margin-top: 65px;
+    margin-bottom: 40px;
+    max-width: 1140px;
+    height: auto;
+
+    
+}
+.Bio__image {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: foto;
+    /* clip-path: circle(40% at 50% 50%); */
+}
+.Bio__title {
+    font-family: 'Cormorant';
+    text-align: center;
+    grid-area: title;
+
+    margin: 0 auto;
+    max-width: 30rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4A6F94;
+    
+}
+
+.Bio__title strong{
+    font-size: 2.5rem;
+    
+    color: #243648;
+}
+
+.Bio__text {
+    font-family: Source Sans Pro;
+    grid-area: text;
+    margin: 0 auto;
+
+    padding: 2rem 1rem 3rem 1rem;
+    text-align: center;
+    max-width: 50ch;
+    font-size: 1rem;
+    text-justify: distribute;
+    
+}
+
+.Bio__button {
+    grid-area: button;
+}
+
+.Bio__logos {
+    grid-area: logos;
+    margin-top: 3rem;
+    height: 200rem;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.Bio__logo {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+}
+
+@media (max-width: 1000px) {
+
+.Bio {
+    display: grid;
+    grid-template-areas: "foto" "title" "text" "button" "logos";
+    grid-template-columns: 100%;
+    grid-template-rows: 30rem auto auto auto auto;
+    margin: 0;
+    
+    
+}
+.Bio__image {
+    grid-area: foto;
+    margin: 0 auto;
+    width: 100%;
+    /* clip-path: circle(40% at 50% 50%); */
+    clip-path: none;
+}
+
+.Bio__title strong {
+    font-size: 1.8rem;
+}
+
+.Bio__title {
+    
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.Bio__text {
+    padding: 1rem;
+    font-size: 1rem;
+}
+.Bio__button {
+    margin-top: 1rem;
+}
+.Bio__logos {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-top: 2rem;
+}
+.Bio__logos img {
+    padding: 0.9rem;
+    margin: 0 auto;
+}
+
+}

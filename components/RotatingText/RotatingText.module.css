@@ -1,0 +1,25 @@
+.rotatingText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  height: 20rem;
+  width: 100%;
+  margin: 0 auto;
+  background: #243648;
+  color: white;
+
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
+.especialidadesTitle{
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.especialidadesList{
+  font-family: 'Cormorant';
+  font-size: 3rem;
+}

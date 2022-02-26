@@ -1,0 +1,15 @@
+.linkButtonWrapper{
+    display: flex;
+    justify-content:center;
+}
+
+.Bio__button{
+    /* margin: 0 auto; */
+
+    width: auto;
+    background-color: #243648;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}

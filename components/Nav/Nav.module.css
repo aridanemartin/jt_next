@@ -1,0 +1,98 @@
+.navWrapper{  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    z-index: 1;
+
+    transition: all 5s ease-in-out;
+}
+.navContent{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas: "logo menu social";    
+}
+
+.navLogoWrapper{
+    padding-left: 5rem;
+}
+
+.linksWrapper{
+    grid-area: menu;
+
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    
+    
+}
+
+.link{
+    padding: 0 1.1rem;
+}
+
+.socialContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.socialIcon{
+    padding: 0 1rem;
+    height: 3rem;
+}
+
+@media (max-width: 1100px){
+
+    .signature, .link, .socialIcon{
+        filter: invert(100%) sepia(3%) saturate(14%) hue-rotate(342deg) brightness(101%) contrast(106%);
+    }
+
+    .navWrapper{
+        display: none;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.3), 
+            rgba(0, 0, 0, 0.7)
+        ),url(../../public/images/leyendo.jpg);
+        background-size: cover;
+        background-position: 45% 0%;
+    }
+
+    .navContent{
+        grid-template-areas: "logo"
+        "menu"
+        "social";  
+        grid-template-columns: 100%;
+        grid-template-rows: 20vh 60vh 20vh;
+    }
+
+    .navLogoWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .linksWrapper{
+        flex-direction: column;
+        justify-content: center;
+        grid-gap: 2rem;
+        padding: 0;
+
+    }
+
+    .link{
+        padding: 2rem;
+    }
+    
+    .socialContainer{
+        grid-area: social;
+    }
+}

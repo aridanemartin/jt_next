@@ -1,0 +1,50 @@
+
+.heroTemplateWrap{
+    height: 100vh;
+    /* filter: brightness(80%);  */
+    background-image: url(../../public/images/portadaIndex2.jpg);
+    background-position: 100% 30%;
+    background-size: cover;
+}
+
+.heroTemplateWrap:after {
+    position: absolute;
+    content:"";
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.671));
+}
+
+.signWrapper{
+    position: absolute;
+    height: 20rem;
+    max-width: 70rem;
+    
+    
+    top: 65vh;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    z-index: 1;  
+}
+
+@media (max-width: 1100px){
+    .heroTemplateWrap{
+    background-position: center;
+    }
+
+    .signWrapper{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .heroTemplateWrap{
+    background-position: -300px;
+    }
+}
+
+

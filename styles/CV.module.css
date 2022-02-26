@@ -1,0 +1,104 @@
+.CV__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    font-family: 'Cormorant';
+    font-weight: 500;
+    margin-top: 150px;
+    padding: 1rem;
+    display: grid;
+    grid-template-areas: "foto1 text";
+    grid-template-columns: 40% 1fr;
+    gap: 1.5rem;
+}
+.CV__container .CV__foto1 {
+    position: relative;
+    grid-area: foto1;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease-in;
+}
+.CV__container .CV__text {
+    grid-area: text;
+}
+.CV__container .CV__text h1 {
+    color: #243648;
+    font-size: 4rem;
+    font-weight: 500;
+    margin: 0;
+}
+.CV__container .CV__text h2 {
+    color: white;
+    font-size: 2rem;
+    padding: 2rem;
+    padding-left: 2rem;
+    font-weight: 500;
+    background: #243648;
+    margin-bottom: 2rem;
+}
+.CV__container .CV__text p {
+    padding-left: 2rem;
+    padding-bottom: 3rem;
+    font-size: 1.3rem;
+}
+
+
+@media (max-width: 1470px) {
+    .CV__container {
+        margin-top: 100px;
+        grid-template-areas: "foto1 text";
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        gap: 2rem;
+        padding: 2rem;
+        margin-bottom: 1rem;
+   }
+    .CV__container .CV__foto1 img {
+        height: 65rem;
+   }
+    .CV__container .CV__text h1 {
+        font-size: 3rem;
+        padding-bottom: 1rem;
+   }
+    .CV__container .CV__text h2 {
+        font-size: 1.2rem;
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+   }
+    .CV__container .CV__text p {
+        font-size: 1.2rem;
+        padding-left: 0rem;
+   }
+}
+
+@media (max-width: 900px) {
+    .CV__container {
+        margin-top: 70px;
+        grid-template-areas: "foto1" "text";
+        grid-template-columns: 1fr;
+        grid-template-rows: 25rem 1fr;
+        padding: 1rem;
+        grid-gap: 1rem;
+        /* grid-auto-rows: auto; */
+    }
+    .CV__container .CV__foto1 img {
+        height: 20rem;
+    }
+    .CV__container .CV__text h1 {
+        font-size: 2.5rem;
+        padding-bottom: 1rem;
+        padding-left: 0rem;
+    }
+    .CV__container .CV__text h2 {
+        font-size: 1rem;
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+        text-align: center;
+    }
+    .CV__container .CV__text p {
+        text-align: center;
+        font-size: 0.9rem;
+        padding-left: 0rem;
+    }
+}
+
+
