@@ -9,16 +9,26 @@ import styles from '@styles/SinglePost.module.css';
 
 export const SinglePost = (data) => {
 
-    function handleImageProps(image){
-
-        let selectedImage = image;
-
         const mainImageProps = useNextSanityImage(
             sanityClient,
-            selectedImage
+            data.mainImage
         );
-        return mainImageProps;
-    }
+        
+        const authorImageProps = useNextSanityImage(
+            sanityClient,
+            data.author.image
+        );
+
+        const image1Props = useNextSanityImage(
+            sanityClient,
+            data.image1
+        );
+
+        const image2Props = useNextSanityImage(
+            sanityClient,
+            data.image2
+        );
+    
 
     
 
@@ -28,7 +38,7 @@ export const SinglePost = (data) => {
         <div className={styles.postImageHero}>
             <h2 className={styles.title}>{data.title}</h2>
             <Image 
-            {...handleImageProps(data.image)}
+            {...mainImageProps}
             layout="fill"
             objectFit="none"
             className={styles.image}
@@ -43,7 +53,7 @@ export const SinglePost = (data) => {
                     <p className={styles.author}>{data.author.name}</p>
                     <div className={styles.authorImage}>
                         <Image 
-                        {...handleImageProps(data.author.image)}
+                        {...authorImageProps}
                         layout="fill"
                         objectFit="cover"
                         alt={`${data.author.name} Foto de Perfil`}
@@ -58,7 +68,7 @@ export const SinglePost = (data) => {
             </section>
             <div className={styles.postImage}>
                 <Image 
-                {...handleImageProps(data.image)}
+                {...image1Props}
                 layout="fill"
                 objectFit="cover"
                 alt={`${data.title} - Foto de artículo *1`}
@@ -70,7 +80,7 @@ export const SinglePost = (data) => {
             
             <div className={styles.postImage}>
                 <Image 
-                {...handleImageProps(data.image1)}
+                {...image1Props}
                 layout="fill"
                 objectFit="cover"
                 alt={`${data.title} - Foto de artículo *2`}
@@ -136,7 +146,7 @@ export const getServerSideProps = async pageContext => {
                 data: post,
                 body: post.body,
                 title: post.title,
-                image: post.mainImage,
+                mainImage: post.mainImage,
                 description: post.description,
                 body1: post.body1,
                 image1: post.articleImage1,

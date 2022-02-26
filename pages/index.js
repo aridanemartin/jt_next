@@ -12,18 +12,43 @@ import sanityClient from '../client';
 import { useNextSanityImage } from 'next-sanity-image';
 import RotatingText from '@components/RotatingText/RotatingText';
 import Layout from '@components/Layout/Layout';
+import { useEffect, useState } from 'react';
+import imageUrlBuilder from "@sanity/image-url";
 
 
 export default function Home({ posts }) {
 
-  function handleImageProps(selectedImage){
+  // function handleImageProps(selectedImage){
 
-    const mainImageProps = useNextSanityImage(
-        sanityClient,
-        selectedImage
-    );
-    return mainImageProps;
-  }
+  //   const mainImageProps = useNextSanityImage(
+  //       sanityClient,
+  //       selectedImage
+  //   );
+  //   return mainImageProps;
+  // }
+  const [mappedPosts, setMappedPosts] = useState([]);
+
+  useEffect(() =>{
+    if(posts.length) {
+        const imgBuilder = imageUrlBuilder({
+            projectId: '6yfev950',
+            dataset: 'production', 
+        });
+
+        setMappedPosts(
+          posts.slice((posts.length - 3), posts.length).map(post => {
+                return {
+                    ...post,
+                    mainImage: imgBuilder.image(post.mainImage),
+                    authorImage: imgBuilder.image(post.author.image),
+                    // .width(500).height(250)
+                }
+            })
+        )
+    }else{
+        setMappedPosts([]);
+    } 
+  },[])
 
   console.log(posts[0])
 
@@ -42,16 +67,13 @@ export default function Home({ posts }) {
       <Layout> 
         <Separador title="Últimos Posts"/>
         <div className={styles.latestPosts}>
-        {posts.slice((posts.length - 3), posts.length).map((post) => {
+        {mappedPosts.map((post) => {
           return (
             <Link href={`blog/${post.slug.current}`}>
               <div className={styles.postPreviewWrapper} key={post.id}>
                 <div className={styles.imgWrapper}>
-                  <Image
-                    {...handleImageProps(post.mainImage)}
-                    layout="fill"
-                    objectFit="cover" 
-                  />
+                  <img src={post.mainImage}/>
+                  
                 </div>
                 <p className={styles.postTitle}>{post.title}</p>
                 <div className={styles.authorData}>
@@ -59,12 +81,7 @@ export default function Home({ posts }) {
                       <p className={styles.date}>{post.author.especialidad}</p>
                       <p className={styles.author}>{post.author.name}</p>
                       <div className={styles.authorImage}>
-                          <Image 
-                          {...handleImageProps(post.author.image)}
-                          layout="fill"
-                          objectFit="cover"
-                          alt={`${post.author.name} Foto de Perfil`}
-                          />
+                        <img src={post.authorImage}/>
                       </div>
                   </div>
                 </div>

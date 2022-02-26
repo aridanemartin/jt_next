@@ -20,9 +20,15 @@
   grid-template-rows: 20rem auto 25rem;
 }
 
-.imgWrapper {
+.postImageWrap img{
+  object-fit: cover;
+}
+
+.imgWrapper img{
   height: 20rem;
+  width: 100%;
   position: relative;
+  object-fit: cover;
   
 }
 
@@ -72,12 +78,13 @@
   padding-bottom: 0.2rem;
 }
 
-.authorImage{
+.authorImage img{
   grid-area: photo;
   position: relative;
   width: 5rem;
   height: 5rem;
   clip-path: circle(50% at 50% 50%);
+  object-fit: cover;
   
 }
 
