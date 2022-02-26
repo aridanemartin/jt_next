@@ -18,14 +18,6 @@ import imageUrlBuilder from "@sanity/image-url";
 
 export default function Home({ posts }) {
 
-  // function handleImageProps(selectedImage){
-
-  //   const mainImageProps = useNextSanityImage(
-  //       sanityClient,
-  //       selectedImage
-  //   );
-  //   return mainImageProps;
-  // }
   const [mappedPosts, setMappedPosts] = useState([]);
 
   useEffect(() =>{
@@ -48,9 +40,7 @@ export default function Home({ posts }) {
     }else{
         setMappedPosts([]);
     } 
-  },[])
-
-  console.log(posts[0])
+  },[posts])
 
   return (
     <>
@@ -69,7 +59,7 @@ export default function Home({ posts }) {
         <div className={styles.latestPosts}>
         {mappedPosts.map((post) => {
           return (
-            <Link href={`blog/${post.slug.current}`}>
+            <Link key={post.slug.current} href={`blog/${post.slug.current}`}>
               <div className={styles.postPreviewWrapper} key={post.id}>
                 <div className={styles.imgWrapper}>
                   <img src={post.mainImage}/>
