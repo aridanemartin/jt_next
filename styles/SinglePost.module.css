@@ -69,6 +69,7 @@
 }
 
 .dataWrap{
+    cursor: pointer;
     width: 20rem;
     display: grid;
     grid-template-areas: "author photo"
@@ -103,3 +104,40 @@
     clip-path: circle(50% at 50% 50%);
     
 }
+
+.blockContent h2{
+    font-family: 'Staatliches', cursive;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.blockContent p{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.blockContent a{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+}
+
+
+@media(max-width:900px){
+    
+    .postImageHero{
+        margin: 0;
+        height: 30rem;
+    }
+.dataWrap{
+    width: 20rem;
+    display: grid;
+    grid-template-areas: "author photo"
+                        "date photo";
+    grid-gap: 0.4rem;
+    padding: 1rem;
+}
+}
+

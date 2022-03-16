@@ -2,6 +2,7 @@ import Nav from '@components/Nav/Nav'
 import Head from 'next/head'
 import '../styles/globals.css'
 import { motion , AnimatePresence} from 'framer-motion';
+import Footer from '@components/Footer/Footer';
 
 function MyApp({ Component, pageProps }) {
   return( 
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }) {
                     <Component {...pageProps} />
                 </motion.div>
       </AnimatePresence>
+      <Footer/>
       
     </>
   )

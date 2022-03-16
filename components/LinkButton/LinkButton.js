@@ -5,7 +5,7 @@ export default function LinkButton(props) {
   return (
   <div className={styles.linkButtonWrapper}>
     <Link href={props.link}>
-        <a className={styles.Bio__button}>
+        <a className={styles.button}>
             {props.text}
         </a>
     </Link>

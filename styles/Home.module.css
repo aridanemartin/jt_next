@@ -1,13 +1,11 @@
 .latestPosts{
   position: relative;
   max-width: 1140px;
-  height: 50rem;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-gap: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 
 .postPreviewWrapper{
@@ -15,10 +13,22 @@
   cursor: pointer;
   grid-template-areas: 
   "picture"
+  "category"
   "title"
+  "description"
   "author";
-  grid-template-rows: 20rem auto 25rem;
+  grid-template-rows: 20rem auto 7rem 10rem auto;
+
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 9px -5px rgb(0 0 0 / 15%);
 }
+
+.postPreviewWrapper:hover{
+  box-shadow:11px 11px 20px -7px rgba(0,0,0,.1);
+  transform:translate(0,-2px);
+}
+
+
 
 .postImageWrap img{
   object-fit: cover;
@@ -32,31 +42,71 @@
   
 }
 
+.categoryWrapper{
+  font-size: 0.8rem;
+  margin: 1rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+.azulClaro{
+  background: #E7F2F8;
+}
+
+.azulOscuro{
+  background: #74BDCB;
+}
+
+.salmon{
+  background: #FFA384;
+}
+
+.dorado{
+  background: #EFE7BC;
+}
+
 .postTitle{
   grid-area: title;
   text-align: center;
+  color: #333;
   font-family: 'Cormorant', serif;
+  font-weight: 700;
   font-size: 2rem;
-  margin: 1rem;
+  padding: 1rem;
 }
 
-.dataWrap{
-  height: 6rem;
-  grid-area: author;
-  display: grid;
-  grid-template-areas: "author photo"
-                      "date photo";
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.1rem;
+.postDescription{
+  grid-area: description;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  color: #566;
+  text-align:justify;
+  text-align-last: center;
+  
 }
 
 .authorData{
-  
   max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
   
+  display: flex;
+  justify-content: center;
+  
+}
+
+.dataWrap{
+  grid-area: author;
+  display: grid;
+  grid-template-areas: 
+  "author photo"
+  "date photo"
+  ;
+  grid-template-columns: 1fr auto;
+  grid-gap: 0.1rem;
+  padding: 2rem 0;
 }
 
 .date{
@@ -78,15 +128,24 @@
   padding-bottom: 0.2rem;
 }
 
-.authorImage img{
+.authorImage{
   grid-area: photo;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+
+.authorImage img{
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   clip-path: circle(50% at 50% 50%);
   object-fit: cover;
   
 }
+
+
 
 .blogAnchor{
 
@@ -103,6 +162,20 @@
 
   padding: 1rem;
 
+}
+
+@media(max-width: 1300px){
+  .latestPosts{
+    
+    grid-template-columns: 100%;
+    grid-gap: 2rem;
+    padding: 1rem;
+    
+  }
+
+  .postPreviewWrapper{
+    grid-template-rows: repeat(4,auto);
+  }
 }
 
 

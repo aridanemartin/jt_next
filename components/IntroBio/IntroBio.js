@@ -1,4 +1,4 @@
-import styles from '@styles/IntroBio.module.css';
+import styles from './IntroBio.module.css';
 
 import FotoPerfil from '../../public/images/portada4.jpg';
 import Image from 'next/image';
@@ -37,6 +37,88 @@ export default function IntroBio() {
         </p>
         <div className={styles.Bio__button}>
             <LinkButton text="Conóceme" link='/about'/>
+        </div>
+        <div className={styles.Bio__logos}>
+            <div className={styles.Bio__logo}>
+                <Image 
+                src={logo8} 
+                alt={logo8}
+                layout="fill"
+                objectFit="contain"   
+                />
+            </div>
+            <div className={styles.Bio__logo}>
+                <Image 
+                src={logo9} 
+                alt={logo9}
+                layout="fill"
+                objectFit="contain"   
+                />
+            </div>
+            <div className={styles.Bio__logo}>
+                <Image 
+                src={logo10} 
+                alt={logo10}
+                layout="fill"
+                objectFit="contain"   
+                />
+            </div>
+            <div className={styles.Bio__logo}>
+            <Image 
+            src={logo3} 
+            alt={logo3}
+            layout="fill"
+            objectFit="contain"   
+            />
+            </div>
+            <div className={styles.Bio__logo}>
+            <Image 
+            src={logo4} 
+            alt={logo4}
+            layout="fill"
+            objectFit="contain"   
+            />
+            </div>
+            <div className={styles.Bio__logo}>
+                <Image 
+                src={logo1} 
+                alt={logo1}
+                layout="fill"
+                objectFit="contain"   
+                />
+            </div>
+            <div className={styles.Bio__logo}>
+            <Image 
+            src={logo2} 
+            alt={logo2}
+            layout="fill"
+            objectFit="contain"   
+            />
+            </div>
+            <div className={styles.Bio__logo}>
+            <Image 
+            src={logo5} 
+            alt={logo5}
+            layout="fill"
+            objectFit="contain"   
+            />
+            </div>
+            <div className={styles.Bio__logo}>
+            <Image 
+            src={logo6} 
+            alt={logo6}
+            layout="fill"
+            objectFit="contain"   
+            />
+            </div>
+            <div className={styles.Bio__logo}>
+            <Image 
+            src={logo7} 
+            alt={logo7}
+            layout="fill"
+            objectFit="contain"   
+            />
+            </div>
         </div>
         
     </div>

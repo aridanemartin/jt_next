@@ -5,8 +5,6 @@ import Image from 'next/image';
 
 export default function ArticleList({ props }) {
 
-
-
     return (
         <div className={styles.post}>
                 <div className={styles.imgWrapper}>

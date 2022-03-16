@@ -1,0 +1,145 @@
+.footerWrap{
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(300deg, rgba(28,44,57,1) 0%, rgba(36,54,72,1) 30%, rgba(65,100,135,1) 100%);
+
+}
+
+.footerContentWrap{
+    max-width: 1440px;
+    margin: 0 auto;
+
+    padding: 1rem;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.menuContent{
+    margin: 2rem 0rem;
+}
+
+.menuContent li{
+    list-style: none;
+    padding: 0.3rem 0rem;
+}
+
+.menuContent li a{
+    color: white;
+}
+
+.socialWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoWrap{
+    position: relative;
+    min-width: 17rem;
+    max-width: 20rem;
+    
+}
+
+.socialContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialIcon{
+    padding: 0 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.socialIcon svg{
+    filter: invert();
+    max-width:2.3rem;
+    transition: all 0.3s ease-in-out;  
+}
+
+.socialIcon:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    
+}
+
+.citaWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 2rem 0rem;
+    color: white;
+}
+
+.citaText{
+    width: 35ch;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.citaButtons{
+    display: flex;
+    flex-direction: row;
+}
+
+.Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+    text-align: center;
+    width: 10rem;
+    border: 1px solid white;
+    padding: 1rem;
+    margin: 2rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    /* border-radius: 15rem; */
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+
+
+.Button:hover{
+    background: white;
+    border: 1px solid #243648;
+    color: #243648;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+@media(max-width: 1200px){
+
+    .menuContent{
+        display: none;
+    }
+
+    .footerContentWrap{ 
+        grid-template-columns: 100%;
+    }
+
+    .citaText{
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+@media(max-width: 400px){
+    .citaButtons{
+        flex-direction: column;
+    }
+
+    .Button{
+        margin: 1rem;
+    }
+}
+

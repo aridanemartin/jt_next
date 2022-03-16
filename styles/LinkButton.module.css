@@ -3,13 +3,27 @@
     justify-content:center;
 }
 
-.Bio__button{
+.button{
     /* margin: 0 auto; */
 
+    background: white;
+    color: #243648;
+    border: 1px solid #243648;
+
     width: auto;
-    background-color: #243648;
+    
     padding: 1rem;
     font-size: 1.2rem;
-    color: white;
+    
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
+
+.button:hover{
+    
+    background-color: #243648;
+    color: white;
+    
+    
+}
+

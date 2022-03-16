@@ -3,13 +3,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import indexCover from '../public/images/portada4.jpg';
-import BlogItem from '@components/BlogItem/BlogItem';
 import Separador from "@components/Separador/Separador";
 import IntroBio from "@components/IntroBio/IntroBio";
 import HeroTemplate from '@components/HeroTemplate/HeroTemplate';
 import Link from 'next/link';
-import sanityClient from '../client';
-import { useNextSanityImage } from 'next-sanity-image';
 import RotatingText from '@components/RotatingText/RotatingText';
 import Layout from '@components/Layout/Layout';
 import { useEffect, useState } from 'react';
@@ -28,7 +25,7 @@ export default function Home({ posts }) {
         });
 
         setMappedPosts(
-          posts.slice((posts.length - 3), posts.length).map(post => {
+          posts.slice((posts.length - 3), posts.length).reverse().map(post => {
                 return {
                     ...post,
                     mainImage: imgBuilder.image(post.mainImage),
@@ -55,17 +52,23 @@ export default function Home({ posts }) {
         <RotatingText/>
 
       <Layout> 
-        <Separador title="Últimos Posts"/>
+        <Separador 
+        title="Últimos Posts"
+        text="Accede a los últimos artículos de mi blog, donde podrás informarte acerca de los últimos estudios y avances en el campo de la endocrinología y nutrición a través de diferentes artículos escritos por mi equipo así como diferentes colaboradores."
+        />
         <div className={styles.latestPosts}>
         {mappedPosts.map((post) => {
           return (
             <Link key={post.slug.current} href={`blog/${post.slug.current}`}>
-              <div className={styles.postPreviewWrapper} key={post.id}>
+              <div className={styles.postPreviewWrapper} key={post._id}>
                 <div className={styles.imgWrapper}>
                   <img src={post.mainImage}/>
                   
                 </div>
-                <p className={styles.postTitle}>{post.title}</p>
+                {post.categories && 
+                post.categories.map((category) =><p key={category._id} className={styles.categoryWrapper + ' ' + styles[category.color]}>{category.title}</p>
+                )}
+                <p id={post.title} className={styles.postTitle}>{post.title}</p>
                 <div className={styles.authorData}>
                   <div className={styles.dataWrap}>
                       <p className={styles.date}>{post.author.especialidad}</p>
@@ -75,6 +78,11 @@ export default function Home({ posts }) {
                       </div>
                   </div>
                 </div>
+                <section 
+                      className={styles.postDescription}
+                      aria-labelledby={post.title}>
+                        {post.description}
+                </section>
               </div>
             </Link>
           
@@ -90,33 +98,20 @@ export default function Home({ posts }) {
 
 export const getServerSideProps = async () => {
     
-    
   //hace la query en relacion a la url pedida por el cliente
-  const query = encodeURIComponent(`*[ _type == "post"]{
+  const query = encodeURIComponent(`*[ _type == "post"] | order(_createdAt asc){
+    _id,
     title,
     mainImage,
     description,
     slug,
-    author->
+    author->,
+    categories[]->
   }`);
   const url = `${process.env.SANITY_URL}query=${query}`;
 
   const data = await fetch(url).then(res => res.json());
-  const posts = data.result;
+  const posts = data.result || [];
 
-  
-
-  if(!posts) {
-      return {
-          props: {
-              posts: [],
-          }
-      }
-  } else{
-      return {
-          props: { 
-              posts, 
-          }
-      }
-  }
+  return { props: { posts } };
 }

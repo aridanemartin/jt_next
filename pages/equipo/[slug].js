@@ -1,0 +1,313 @@
+import sanityClient from "../../client";
+import { useNextSanityImage } from "next-sanity-image";
+
+import Link from "next/link";
+import Image from "next/image";
+import styles from "@styles/SingleDoctor.module.css";
+import SanityBlockContent from "@sanity/block-content-to-react";
+import Layout from "@components/Layout/Layout";
+import InfiniteCarrousel from "@components/InfiniteCarrousel/InfiniteCarrousel";
+import primeraVisitaOnline from "../../public/images/primeraVisitaOnline.jpg";
+import revisionOnline from "../../public/images/revision.jpg";
+import consultaEmail from "../../public/images/consultaEmail.jpg";
+import bonoOnline from "../../public/images/bonoOnline.jpg";
+import Separador from "@components/Separador/Separador";
+import webIcon from "../../public/images/webIcon.png";
+import doctoraliaLogo from "../../public/images/doctoraliaIcon.png";
+import bata from "../../public/images/bonoOnline.jpg";
+
+export default function SingleDoctor(props) {
+  const mainImageProps = useNextSanityImage(sanityClient, props.author.image);
+
+  function formatLink(link) {
+    let httpswwwRegex = /^https:\/\/www./gm;
+    let httpsRegex = /^https:\/\//gm;
+    let wwwRegex = /^www./gm;
+
+    if (link.match(httpswwwRegex)) {
+      return link;
+    } else if (link.match(wwwRegex)) {
+      return "https://" + link;
+    } else if (link.match(httpsRegex)) {
+      return link;
+    } else {
+      return "https://www." + link;
+    }
+  }
+
+  return (
+    <div>
+      <div className={styles.postImageHero}>
+        <h2 className={styles.title}>
+          Reserva tu cita con {props.author.name}
+        </h2>
+        <Image
+          src={bata}
+          layout="fill"
+          objectFit="none"
+          className={styles.imageHero}
+        />
+      </div>
+      <Layout>
+        <div className={styles.doctorProfileWrapper}>
+          <div className={styles.doctorImageWrapper}>
+            <Image {...mainImageProps} layout="fill" objectFit="cover" />
+          </div>
+          <section className={styles.doctorBioWrap}>
+            <h1>{props.author.name}</h1>
+            <h2>{props.author.especialidad}</h2>
+            <SanityBlockContent blocks={props.author.bio} />
+            <div className={styles.socialWrapper}>
+              {props.author.web && (
+                <Link href={formatLink(props.author.web)}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <div className={styles.socialIcon}>
+                      <Image src={webIcon} layout="fill" objectFit="cover" />
+                    </div>
+                  </a>
+                </Link>
+              )}
+              {props.author.doctoralia && (
+                <Link href={formatLink(props.author.doctoralia)}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <div className={styles.socialIcon}>
+                      <Image
+                        src={doctoraliaLogo}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </a>
+                </Link>
+              )}
+              {props.author.instagram && (
+                <Link href={formatLink(props.author.instagram)}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <div className={styles.socialIcon}>
+                      <svg
+                        fill="#000000"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="100%"
+                        height="100%"
+                      >
+                        {" "}
+                        <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z" />
+                      </svg>
+                    </div>
+                  </a>
+                </Link>
+              )}
+              {props.author.youtube && (
+                <Link href={formatLink(props.author.youtube)}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <div className={styles.socialIcon}>
+                      <svg
+                        fill="#000000"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50"
+                        width="100%"
+                        height="100%"
+                      >
+                        <path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z" />
+                      </svg>
+                    </div>
+                  </a>
+                </Link>
+              )}
+              {props.author.twitter && (
+                <Link href={formatLink(props.author.twitter)}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <div className={styles.socialIcon}>
+                      <svg
+                        fill="#000000"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 30 30"
+                        width="100%"
+                        height="100%"
+                      >
+                        {" "}
+                        <path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z" />
+                      </svg>
+                    </div>
+                  </a>
+                </Link>
+              )}
+              {props.author.facebook && (
+                <Link href={formatLink(props.author.facebook)}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <div className={styles.socialIcon}>
+                      <svg
+                        fill="#000000"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 30 30"
+                        width="30px"
+                        height="30px"
+                      >
+                        {" "}
+                        <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h10v-9h-3v-3h3v-1.611C16,9.339,17.486,8,20.021,8 c1.214,0,1.856,0.09,2.16,0.131V11h-1.729C19.376,11,19,11.568,19,12.718V14h3.154l-0.428,3H19v9h5c1.105,0,2-0.895,2-2V6 C26,4.895,25.104,4,24,4z" />
+                      </svg>
+                    </div>
+                  </a>
+                </Link>
+              )}
+            </div>
+          </section>
+        </div>
+        <Separador
+          title={`Reserva tu cita con ${props.author.name}`}
+          text="Solicita cualquiera de los servicios que disponemos fácilmente desde alguno de los siguientes enlaces"
+        />
+        <section className={styles.servicesSectionWrap}>
+          {props.author.primeraVisitaLink && (
+            <Link href={formatLink(props.author.primeraVisitaLink)}>
+              <a>
+                <div className={styles.servicesCard}>
+                  <div className={styles.servicesImage}>
+                    <Image
+                      src={primeraVisitaOnline}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                  <h2>{props.author.primeraVisitaTitle}</h2>
+                  <p>{props.author.primeraVisitaDescription}</p>
+                  <p className={styles.servicesPrice}>
+                    {props.author.primeraVisitaPrecio}€
+                  </p>
+                </div>
+              </a>
+            </Link>
+          )}
+          {props.author.revisionLink && (
+            <Link href={formatLink(props.author.revisionLink)}>
+              <a>
+                <div className={styles.servicesCard}>
+                  <div className={styles.servicesImage}>
+                    <Image
+                      src={revisionOnline}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                  <h2>{props.author.revisionTitle}</h2>
+                  <p>{props.author.revisionDescription}</p>
+                  <p className={styles.servicesPrice}>
+                    {props.author.revisionPrecio}€
+                  </p>
+                </div>
+              </a>
+            </Link>
+          )}
+          {props.author.consultaEmailLink && (
+            <Link href={formatLink(props.author.consultaEmailLink)}>
+              <a>
+                <div className={styles.servicesCard}>
+                  <div className={styles.servicesImage}>
+                    <Image
+                      src={consultaEmail}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                  <h2>{props.author.consultaEmailTitle}</h2>
+                  <p>{props.author.consultaEmailDescription}</p>
+                  <p className={styles.servicesPrice}>
+                    {props.author.consultaEmailPrecio}€
+                  </p>
+                </div>
+              </a>
+            </Link>
+          )}
+          {props.author.bonoOnlineLink && (
+            <Link href={formatLink(props.author.bonoOnlineLink)}>
+              <a>
+                <div className={styles.servicesCard}>
+                  <div className={styles.servicesImage}>
+                    <Image src={bonoOnline} layout="fill" objectFit="cover" />
+                  </div>
+                  <h2>{props.author.bonoOnlineTitle}</h2>
+                  <p>{props.author.bonoOnlineDescription}</p>
+                  <p className={styles.servicesPrice}>
+                    {props.author.bonoOnlinePrecio}€
+                  </p>
+                </div>
+              </a>
+            </Link>
+          )}
+        </section>
+        <Separador
+          title={`Reseñas de ${props.author.name}`}
+          text="Solicita cualquiera de los servicios que disponemos fácilmente desde alguno de los siguientes enlaces"
+        />
+        <section className={styles.commentSectionWrap}>
+          <InfiniteCarrousel
+            text1={props.author.comentario1}
+            autor1={props.author.comentario1autor}
+            extraido1={props.author.comentario1fuente}
+            text2={props.author.comentario2}
+            autor2={props.author.comentario2autor}
+            extraido2={props.author.comentario2fuente}
+            text3={props.author.comentario3}
+            autor3={props.author.comentario3autor}
+            extraido3={props.author.comentario3fuente}
+            text4={props.author.comentario4}
+            autor4={props.author.comentario4autor}
+            extraido4={props.author.comentario4fuente}
+          />
+        </section>
+      </Layout>
+    </div>
+  );
+}
+
+export const getServerSideProps = async (pageContext) => {
+  const pageSlug = pageContext.query.slug;
+  //hace la query en relacion a la url pedida por el cliente
+  const query =
+    encodeURIComponent(`*[ _type == "author" && slug.current == "${pageSlug}"]{
+        _id,
+        bio,
+        especialidad,
+        image,
+        name,
+        web,
+        instagram,
+        youtube,
+        twitter,
+        doctoralia,
+        comentario1,
+        comentario1fuente,
+        comentario1autor,
+        comentario2,
+        comentario2fuente,
+        comentario2autor,
+        comentario3,
+        comentario3fuente,
+        comentario3autor,
+        comentario4,
+        comentario4fuente,
+        comentario4autor,
+        primeraVisitaTitle,
+        primeraVisitaDescription,
+        primeraVisitaLink,
+        primeraVisitaPrecio,
+        revisionTitle,
+        revisionDescription,
+        revisionLink,
+        revisionPrecio,
+        consultaEmailTitle,
+        consultaEmailDescription,
+        consultaEmailLink,
+        consultaEmailPrecio,
+        bonoOnlineTitle,
+        bonoOnlineDescription,
+        bonoOnlineLink,
+        bonoOnlinePrecio
+    }`);
+  const url = `https://6yfev950.api.sanity.io/v2021-08-31/data/query/production?query=${query}`;
+  const result = await fetch(url).then((res) => res.json());
+  const author = result.result[0] || [];
+
+  return { props: { author } };
+};

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './RotatingText.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 export default function RotatingText() {
 
@@ -16,7 +17,7 @@ export default function RotatingText() {
         }else{
         setCounter((counter) => counter + 1);
         }
-    }, 2000);
+    }, 3000);
 
     return () => {
         clearInterval(interval);
@@ -25,21 +26,58 @@ export default function RotatingText() {
     }, [counter]);
 
     return (
-    <div className={styles.rotatingText}>
-        <div className={styles.textWrap}>
-            <p className={styles.especialidadesTitle}>Si necesitas ayuda en alguna de las siguientes especialidades estás en el sitio adecuado.
-            </p>
-            <AnimatePresence>
-                <motion.h2 
-                className={styles.especialidadesList}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                >
-                    {especialidades[counter]}
-                </motion.h2>
-            </AnimatePresence>
+    <>
+        
+        <div className={styles.rotatingText}>
+            <div className={styles.textWrap}>
+                <p className={styles.especialidadesTitle}>Si necesitas ayuda en alguna de las siguientes especialidades estás en el lugar adecuado.
+                </p>
+                {/* <div className={styles.especialidadesListWrapper}>
+                    <h2 className={styles.especialidadesList}>
+                        {especialidades[counter]}
+                    </h2>
+                </div> */}
+                <div className={styles.especialidadesListWrapper}>
+                    <div className={styles.especialidadesList}>
+                        <h2 className={styles.item0}>Diabetes y Síndrome<br/>Metabólico</h2>
+                        <h2 className={styles.item1}>Patología Tiroidea y<br/> Ecografía Tiroidea</h2>
+                        <h2 className={styles.item2}>Educación<br/> Nutricional</h2>
+                        <h2 className={styles.item3}>
+                        Diabetes<br/> Gestacional</h2>
+                        <h2 className={styles.item4}>Síndrome de Ovario<br/> Poliquístico
+                        </h2>
+                        <h2 className={styles.item5}>
+                        Salud Hormonal<br/> Femenina
+                        </h2>
+                        <h2 className={styles.item6}>
+                        Sobrecrecimiento<br/> Bacteriano
+                        </h2>
+                        <h2 className={styles.item7}>
+                        Obesidad
+                        </h2>
+                        <h2 className={styles.item8}>
+                        Alteraciones<br/> del colesterol
+                        </h2>
+                        <h2 className={styles.item9}>
+                        Videoconsulta<br/> Endocrinológica
+                        </h2>
+                        <h2 className={styles.item10}>
+                        Fertilidad y<br/> Reproducción
+                        </h2>
+                        <h2 className={styles.item11}>
+                        Trastornos<br/> Hipófosis
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+            <div className={styles.buttonWrap}>
+                <Link href="/">
+                    <a>Concertar Cita</a>
+                </Link>
+            </div>
         </div>
-    </div>
+        
+    </>
 )
 }

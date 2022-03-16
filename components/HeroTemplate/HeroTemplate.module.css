@@ -5,6 +5,15 @@
     background-image: url(../../public/images/portadaIndex2.jpg);
     background-position: 100% 30%;
     background-size: cover;
+    animation: fadeZoom 1.4s forwards;
+    animation-duration: 3s;
+    transition: all 0.3s ease-in-out;
+
+}
+
+@keyframes fadeZoom{
+    0%{opacity:0;transform:scale3d(1.05,1.05,1)}
+    to{opacity:1;transform:none}
 }
 
 .heroTemplateWrap:after {
@@ -17,8 +26,8 @@
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.671));
 }
 
-.signWrapper{
-    position: absolute;
+.signWrapper, .signWrapper2{
+    position: relative;
     height: 20rem;
     max-width: 70rem;
     
@@ -31,20 +40,42 @@
     z-index: 1;  
 }
 
+.signWrapper2{
+    position: relative;
+    display: none;
+    height: 10rem;
+    max-width: 20rem;
+    
+    top: 25vh;
+}
+
+
 @media (max-width: 1100px){
     .heroTemplateWrap{
-    background-position: center;
+        height: 70vh;
+        background-image: url(../../public/images/portada4.jpg);  
+        background-position: center;
     }
-
+    .heroTemplateWrap:after {
+        height:70vh;
+    }
     .signWrapper{
         display: none;
     }
-}
-
-@media (max-width: 600px){
-    .heroTemplateWrap{
-    background-position: -300px;
+    .signWrapper2{
+        display: block;
+        top: 30vh;
     }
 }
+
+@media (max-width: 375px){
+    .heroTemplateWrap{
+        
+        background-image: url(../../public/images/portada5.jpg);
+        background-position: -350px;
+    }
+    
+}
+
 
 
