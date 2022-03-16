@@ -18,6 +18,26 @@ import bata from "../../public/images/bonoOnline.jpg";
 
 export default function SingleDoctor(props) {
   const mainImageProps = useNextSanityImage(sanityClient, props.author.image);
+  const servicio1Image = useNextSanityImage(
+    sanityClient,
+    props.author.servicio1Image
+  );
+  const servicio2Image = useNextSanityImage(
+    sanityClient,
+    props.author.servicio2Image
+  );
+  const servicio3Image = useNextSanityImage(
+    sanityClient,
+    props.author.servicio3Image
+  );
+  const servicio4Image = useNextSanityImage(
+    sanityClient,
+    props.author.servicio4Image
+  );
+  const servicio5Image = useNextSanityImage(
+    sanityClient,
+    props.author.servicio5Image
+  );
 
   function formatLink(link) {
     let httpswwwRegex = /^https:\/\/www./gm;
@@ -141,11 +161,48 @@ export default function SingleDoctor(props) {
                         fill="#000000"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 30 30"
-                        width="30px"
-                        height="30px"
+                        width="100%"
+                        height="100%"
                       >
                         {" "}
                         <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h10v-9h-3v-3h3v-1.611C16,9.339,17.486,8,20.021,8 c1.214,0,1.856,0.09,2.16,0.131V11h-1.729C19.376,11,19,11.568,19,12.718V14h3.154l-0.428,3H19v9h5c1.105,0,2-0.895,2-2V6 C26,4.895,25.104,4,24,4z" />
+                      </svg>
+                    </div>
+                  </a>
+                </Link>
+              )}
+
+              {props.author.linkedin && (
+                <Link href={formatLink(props.author.linkedin)}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <div className={styles.socialIcon}>
+                      <svg
+                        fill="#000000"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 30 30"
+                        width="100%"
+                        height="100%"
+                      >
+                        {" "}
+                        <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z" />
+                      </svg>
+                    </div>
+                  </a>
+                </Link>
+              )}
+              {props.author.tiktok && (
+                <Link href={formatLink(props.author.tiktok)}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <div className={styles.socialIcon}>
+                      <svg
+                        fill="#000000"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50"
+                        width="100%"
+                        height="100%"
+                      >
+                        {" "}
+                        <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z" />
                       </svg>
                     </div>
                   </a>
@@ -159,77 +216,131 @@ export default function SingleDoctor(props) {
           text="Solicita cualquiera de los servicios que disponemos fácilmente desde alguno de los siguientes enlaces"
         />
         <section className={styles.servicesSectionWrap}>
-          {props.author.primeraVisitaLink && (
-            <Link href={formatLink(props.author.primeraVisitaLink)}>
-              <a>
+          {props.author.servicio1Link && (
+            <Link href={formatLink(props.author.servicio1Link)}>
+              <a className={styles.servicesCardWrapper}>
                 <div className={styles.servicesCard}>
                   <div className={styles.servicesImage}>
                     <Image
-                      src={primeraVisitaOnline}
+                      {...servicio1Image}
                       layout="fill"
                       objectFit="cover"
                     />
                   </div>
-                  <h2>{props.author.primeraVisitaTitle}</h2>
-                  <p>{props.author.primeraVisitaDescription}</p>
+                  <div className={styles.servicesTitle}>
+                    <h2>{props.author.servicio1Title}</h2>
+                    <p>{props.author.servicio1Duration}</p>
+                  </div>
+                  <p className={styles.servicesDescription}>
+                    {props.author.servicio1Description}
+                  </p>
                   <p className={styles.servicesPrice}>
-                    {props.author.primeraVisitaPrecio}€
+                    {props.author.servicio1Precio}
+                    {props.author.servicio1Precio ? "€" : ''}
                   </p>
                 </div>
               </a>
             </Link>
           )}
-          {props.author.revisionLink && (
-            <Link href={formatLink(props.author.revisionLink)}>
-              <a>
+          {props.author.servicio2Link && (
+            <Link href={formatLink(props.author.servicio2Link)}>
+              <a className={styles.servicesCardWrapper}>
                 <div className={styles.servicesCard}>
                   <div className={styles.servicesImage}>
                     <Image
-                      src={revisionOnline}
+                      {...servicio2Image}
                       layout="fill"
                       objectFit="cover"
                     />
                   </div>
-                  <h2>{props.author.revisionTitle}</h2>
-                  <p>{props.author.revisionDescription}</p>
+                  <div className={styles.servicesTitle}>
+                    <h2>{props.author.servicio2Title}</h2>
+                    <p>{props.author.servicio2Duration}</p>
+                  </div>
+                  <p className={styles.servicesDescription}>
+                    {props.author.servicio2Description}
+                  </p>
                   <p className={styles.servicesPrice}>
-                    {props.author.revisionPrecio}€
+                    {props.author.servicio2Precio}
+                    {props.author.servicio2Precio ? "€" : ''}
                   </p>
                 </div>
               </a>
             </Link>
           )}
-          {props.author.consultaEmailLink && (
-            <Link href={formatLink(props.author.consultaEmailLink)}>
-              <a>
+          {props.author.servicio3Link && (
+            <Link href={formatLink(props.author.servicio3Link)}>
+              <a className={styles.servicesCardWrapper}>
                 <div className={styles.servicesCard}>
                   <div className={styles.servicesImage}>
                     <Image
-                      src={consultaEmail}
+                      {...servicio3Image}
                       layout="fill"
                       objectFit="cover"
                     />
                   </div>
-                  <h2>{props.author.consultaEmailTitle}</h2>
-                  <p>{props.author.consultaEmailDescription}</p>
+                  <div className={styles.servicesTitle}>
+                    <h2>{props.author.servicio3Title}</h2>
+                    <p>{props.author.servicio3Duration}</p>
+                  </div>
+                  <p className={styles.servicesDescription}>
+                    {props.author.servicio3Description}
+                  </p>
                   <p className={styles.servicesPrice}>
-                    {props.author.consultaEmailPrecio}€
+                    {props.author.servicio3Precio}
+                    {props.author.servicio3Precio ? "€" : ''}
                   </p>
                 </div>
               </a>
             </Link>
           )}
-          {props.author.bonoOnlineLink && (
-            <Link href={formatLink(props.author.bonoOnlineLink)}>
-              <a>
+          {props.author.servicio4Link && (
+            <Link href={formatLink(props.author.servicio4Link)}>
+              <a className={styles.servicesCardWrapper}>
                 <div className={styles.servicesCard}>
                   <div className={styles.servicesImage}>
-                    <Image src={bonoOnline} layout="fill" objectFit="cover" />
+                    <Image
+                      {...servicio4Image}
+                      layout="fill"
+                      objectFit="cover"
+                    />
                   </div>
-                  <h2>{props.author.bonoOnlineTitle}</h2>
-                  <p>{props.author.bonoOnlineDescription}</p>
+                  <div className={styles.servicesTitle}>
+                    <h2>{props.author.servicio4Title}</h2>
+                    <p>{props.author.servicio4Duration}</p>
+                  </div>
+                  <p className={styles.servicesDescription}>
+                    {props.author.servicio4Description}
+                  </p>
                   <p className={styles.servicesPrice}>
-                    {props.author.bonoOnlinePrecio}€
+                    {props.author.servicio4Precio}
+                    {props.author.servicio4Precio ? "€" : ''}
+                  </p>
+                </div>
+              </a>
+            </Link>
+          )}
+          {props.author.servicio5Link && (
+            <Link href={formatLink(props.author.servicio5Link)}>
+              <a className={styles.servicesCardWrapper}>
+                <div className={styles.servicesCard}>
+                  <div className={styles.servicesImage}>
+                    <Image
+                      {...servicio5Image}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                  <div className={styles.servicesTitle}>
+                    <h2>{props.author.servicio5Title}</h2>
+                    <p>{props.author.servicio5Duration}</p>
+                  </div>
+                  <p className={styles.servicesDescription}>
+                    {props.author.servicio5Description}
+                  </p>
+                  <p className={styles.servicesPrice}>
+                    {props.author.servicio5Precio}
+                    {props.author.servicio5Precio ? "€" : ''}
                   </p>
                 </div>
               </a>
@@ -273,9 +384,12 @@ export const getServerSideProps = async (pageContext) => {
         name,
         web,
         instagram,
+        facebook,
         youtube,
         twitter,
         doctoralia,
+        tiktok,
+        linkedin,
         comentario1,
         comentario1fuente,
         comentario1autor,
@@ -288,22 +402,36 @@ export const getServerSideProps = async (pageContext) => {
         comentario4,
         comentario4fuente,
         comentario4autor,
-        primeraVisitaTitle,
-        primeraVisitaDescription,
-        primeraVisitaLink,
-        primeraVisitaPrecio,
-        revisionTitle,
-        revisionDescription,
-        revisionLink,
-        revisionPrecio,
-        consultaEmailTitle,
-        consultaEmailDescription,
-        consultaEmailLink,
-        consultaEmailPrecio,
-        bonoOnlineTitle,
-        bonoOnlineDescription,
-        bonoOnlineLink,
-        bonoOnlinePrecio
+        servicio1Image,
+        servicio1Title,
+        servicio1Duration,
+        servicio1Description,
+        servicio1Link,
+        servicio1Precio,
+        servicio2Image,
+        servicio2Title,
+        servicio2Duration,
+        servicio2Description,
+        servicio2Link,
+        servicio2Precio,
+        servicio3Image,
+        servicio3Title,
+        servicio3Duration,
+        servicio3Description,
+        servicio3Link,
+        servicio3Precio,
+        servicio4Image,
+        servicio4Title,
+        servicio4Duration,
+        servicio4Description,
+        servicio4Link,
+        servicio4Precio,
+        servicio5Image,
+        servicio5Title,
+        servicio5Duration,
+        servicio5Description,
+        servicio5Link,
+        servicio5Precio
     }`);
   const url = `https://6yfev950.api.sanity.io/v2021-08-31/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());

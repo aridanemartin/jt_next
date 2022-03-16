@@ -31,7 +31,7 @@
 }
 
 .slider .slideTrack {
-    animation: scroll 40s linear infinite;
+    animation: scroll 80s linear infinite;
     display: flex;
     width: calc(500px * 8);
 }
@@ -93,18 +93,19 @@
     color: #333;
 }
 
-.grupo{
+.extraido{
     grid-area: extraido;
     display: block;
     font-size: 0.7rem;
+    color: #777;
     
 }
 
-.description{
+.fuente{
     grid-area: fuente;
     display: block;
-    font-size: 0.8rem;
-   
+    font-size: 1rem;
+    font-weight: bold;   
 }
 
 
@@ -133,15 +134,17 @@
     }
 
     .slider {   
-        height: 350px;
+        height: 450px;
+        padding: 1rem;
     }
 
     .slideText{
+        font-size: 0.9rem;
         padding: 1.5rem;
     }
 
     .cslide {     
-        height: 350px;
+        height: 450px;
         width: 300px;  
         grid-template-rows: auto 60% 40%;  
     }

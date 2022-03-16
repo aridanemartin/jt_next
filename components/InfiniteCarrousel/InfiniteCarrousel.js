@@ -21,8 +21,8 @@ export default function InfiniteCarrousel(props) {
 
           <div className={styles.grupoWrap}>
             <p className={styles.author}>{props.autor1}</p>
-            <p className={styles.grupo}>Comentario Extraido de</p>
-            <p className={styles.description}>{props.extraido1}</p>
+            <p className={styles.extraido}>Comentario Extraido de</p>
+            <p className={styles.fuente}>{props.extraido1}</p>
           </div>
         </section>
         <section className={styles.cslide}>
@@ -37,8 +37,8 @@ export default function InfiniteCarrousel(props) {
           </div>
           <div className={styles.grupoWrap}>
             <p className={styles.author}>{props.autor2}</p>
-            <p className={styles.grupo}>Comentario Extraido de</p>
-            <p className={styles.description}>Doctoralia</p>
+            <p className={styles.extraido}>Comentario Extraido de</p>
+            <p className={styles.fuente}>Doctoralia</p>
           </div>
         </section>
         <section className={styles.cslide}>
@@ -53,8 +53,8 @@ export default function InfiniteCarrousel(props) {
           </div>
           <div className={styles.grupoWrap}>
             <p className={styles.author}>{props.autor3}</p>
-            <p className={styles.grupo}>Comentario Extraido de</p>
-            <p className={styles.description}>Doctoralia</p>
+            <p className={styles.extraido}>Comentario Extraido de</p>
+            <p className={styles.fuente}>Doctoralia</p>
           </div>
         </section>
         <section className={styles.cslide}>
@@ -69,8 +69,8 @@ export default function InfiniteCarrousel(props) {
           </div>
           <div className={styles.grupoWrap}>
             <p className={styles.author}>{props.autor4}</p>
-            <p className={styles.grupo}>Comentario Extraido de</p>
-            <p className={styles.description}>Doctoralia</p>
+            <p className={styles.extraido}>Comentario Extraido de</p>
+            <p className={styles.fuente}>Doctoralia</p>
           </div>
         </section>
         <section className={styles.cslide}>
@@ -85,8 +85,8 @@ export default function InfiniteCarrousel(props) {
           </div>
           <div className={styles.grupoWrap}>
             <p className={styles.author}>{props.autor1}</p>
-            <p className={styles.grupo}>Comentario Extraido de</p>
-            <p className={styles.description}>Doctoralia</p>
+            <p className={styles.extraido}>Comentario Extraido de</p>
+            <p className={styles.fuente}>Doctoralia</p>
           </div>
         </section>
         <section className={styles.cslide}>
@@ -101,8 +101,8 @@ export default function InfiniteCarrousel(props) {
           </div>
           <div className={styles.grupoWrap}>
             <p className={styles.author}>{props.autor2}</p>
-            <p className={styles.grupo}>Comentario Extraido de</p>
-            <p className={styles.description}>Doctoralia</p>
+            <p className={styles.extraido}>Comentario Extraido de</p>
+            <p className={styles.fuente}>Doctoralia</p>
           </div>
         </section>
         <section className={styles.cslide}>
@@ -117,8 +117,8 @@ export default function InfiniteCarrousel(props) {
           </div>
           <div className={styles.grupoWrap}>
             <p className={styles.author}>{props.autor3}</p>
-            <p className={styles.grupo}>Comentario Extraido de</p>
-            <p className={styles.description}>Doctoralia</p>
+            <p className={styles.extraido}>Comentario Extraido de</p>
+            <p className={styles.fuente}>Doctoralia</p>
           </div>
         </section>
         <section className={styles.cslide}>
@@ -133,8 +133,8 @@ export default function InfiniteCarrousel(props) {
           </div>
           <div className={styles.grupoWrap}>
             <p className={styles.author}>{props.autor4}</p>
-            <p className={styles.grupo}>Comentario Extraido de</p>
-            <p className={styles.description}>Doctoralia</p>
+            <p className={styles.extraido}>Comentario Extraido de</p>
+            <p className={styles.fuente}>Doctoralia</p>
           </div>
         </section>
       </div>

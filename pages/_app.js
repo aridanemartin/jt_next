@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
 
 
 
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
                 <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
