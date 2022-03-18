@@ -1,14 +1,14 @@
 import styles from "@styles/Equipo.module.css";
-import HeroTemplate from "@components/HeroTemplate/HeroTemplate";
 import Image from "next/image";
 import Link from "next/link";
 import sanityClient from "../../client";
 import { useNextSanityImage } from "next-sanity-image";
-import bata from "../../public/images/team2.jpg";
+import team from "../../public/images/team2.jpg";
 import Layout from "@components/Layout/Layout";
+import Separador from "@components/Separador/Separador";
 
 const Equipo = ({ author }) => {
-  function generateImageProps(index) {
+  function useImageProps(index) {
     const mainImageProps = useNextSanityImage(
       sanityClient,
       author[index].image
@@ -19,14 +19,18 @@ const Equipo = ({ author }) => {
   return (
     <>
       <div className={styles.postImageHero}>
-        <h1 className={styles.title}>Conoce a nuestro equipo</h1>
+        <h1 className={styles.title}>Equipo Médico</h1>
         <Image
-          src={bata}
+          src={team}
           layout="fill"
-          objectFit="none"
+          objectFit="cover"
           className={styles.imageHero}
         />
       </div>
+      <Separador 
+        title="Conoce a nuestro equipo"
+        text="Haz click en cualquiera de nuestros especialistas para conocer más acerca de ellos."
+      />
       <Layout>
         <section className={styles.cardWrapper}>
           {author.map((author, index) => {
@@ -40,7 +44,7 @@ const Equipo = ({ author }) => {
                     <a className={styles.singleCard}>
                       <div className={styles.doctorImageWrapper}>
                         <Image
-                          {...generateImageProps(index)}
+                          {...useImageProps(index)}
                           layout="fill"
                           objectFit="cover"
                         />

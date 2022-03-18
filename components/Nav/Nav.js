@@ -2,15 +2,37 @@ import styles from './Nav.module.css'
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
+
 
 // images
 import navLogo from '../../public/images/firma.svg';
 
 export default function Nav() {
-    return (
-        <div className={styles.navWrapper}>
-            <div className={styles.navContent}>
 
+    
+
+    const[isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
+
+    return (
+        <>
+        <button 
+            onClick={toggle} 
+            className={isOpen === false ? styles.burger : styles.burger + ' ' + styles.open + ' ' + styles.burgerOpen}
+            id="burger"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+        </button>
+        <div className={isOpen === true
+        ? styles.navWrapper + " " + styles.navOpen
+        : styles.navWrapper}>
+            <div className={styles.navContent}>
+            
+            
                 <div className={styles.navLogoWrapper}>
 
                     <Image
@@ -69,5 +91,6 @@ export default function Nav() {
                 </div>
             </div>  
         </div>
+        </>
     )
 }
