@@ -12,27 +12,27 @@ export default function Footer() {
                 <ul className={styles.menuContent}>
                     <li>
                         <Link href='/'>
-                            <a>Inicio</a>
+                            <a className={styles.menuLink}>Inicio</a>
                         </Link>
                     </li>
                     <li>
                         <Link href='/equipo/dr-julian-tamayo#conoceme'>
-                            <a>Conóceme</a>
+                            <a className={styles.menuLink}>Conóceme</a>
                         </Link>
                     </li>
                     <li>
                         <Link href='/blog'>
-                            <a>Blog</a>
+                            <a className={styles.menuLink}>Blog</a>
                         </Link>
                     </li>
                     <li>
                         <Link href='/equipo'>
-                            <a>Equipo</a>
+                            <a className={styles.menuLink}>Equipo</a>
                         </Link>
                     </li>
                     <li>
                         <Link href='/'>
-                            <a>Contacto</a>
+                            <a className={styles.menuLink}>Contacto</a>
                         </Link>
                     </li>
                 </ul>

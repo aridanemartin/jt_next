@@ -223,7 +223,7 @@ export default function SingleDoctor(props) {
                 <div className={styles.servicesContentWrap}>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio1Title}</h2>
-                    <p>{props.author.servicio1Duration}</p>
+                    <p>{props.author.servicio1Duration} min</p>
                   </div>
                   <div className={styles.servicesDescription}>
                     <SanityBlockContent
@@ -256,7 +256,7 @@ export default function SingleDoctor(props) {
                 <div className={styles.servicesContentWrap}>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio2Title}</h2>
-                    <p>{props.author.servicio2Duration}</p>
+                    <p>{props.author.servicio2Duration} min</p>
                   </div>
                   <div className={styles.servicesDescription}>
                     <SanityBlockContent
@@ -289,7 +289,7 @@ export default function SingleDoctor(props) {
                   </div>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio3Title}</h2>
-                    <p>{props.author.servicio3Duration}</p>
+                    <p>{props.author.servicio3Duration} min</p>
                   </div>
                   <div className={styles.servicesDescription}>
                     <SanityBlockContent
@@ -322,7 +322,7 @@ export default function SingleDoctor(props) {
                   </div>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio4Title}</h2>
-                    <p>{props.author.servicio4Duration}</p>
+                    <p>{props.author.servicio4Duration} min</p>
                   </div>
                   <div className={styles.servicesDescription}>
                     <SanityBlockContent
@@ -355,7 +355,7 @@ export default function SingleDoctor(props) {
                   </div>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio5Title}</h2>
-                    <p>{props.author.servicio5Duration}</p>
+                    <p>{props.author.servicio5Duration} min</p>
                   </div>
                   <div className={styles.servicesDescription}>
                     <SanityBlockContent

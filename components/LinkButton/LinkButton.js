@@ -1,4 +1,4 @@
-import styles from '@styles/LinkButton.module.css';
+import styles from './LinkButton.module.css';
 import Link from 'next/link';
 
 export default function LinkButton(props) {

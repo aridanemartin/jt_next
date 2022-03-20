@@ -9,6 +9,7 @@ import Separador from "@components/Separador/Separador";
 import {useState, useEffect} from "react";
 
 import imageUrlBuilder from "@sanity/image-url";
+import Header from "@components/Header/Header";
 
 const Equipo = ({ author }) => {
   
@@ -46,15 +47,10 @@ const Equipo = ({ author }) => {
 
   return (
     <>
-      <div className={styles.postImageHero}>
-        <h1 className={styles.title}>Equipo Médico</h1>
-        <Image
-          src={team}
-          layout="fill"
-          objectFit="cover"
-          className={styles.imageHero}
-        />
-      </div>
+      <Header
+      title="Equipo Médico"
+      image={team}
+      />
       <Separador 
         title="Conoce a nuestro equipo"
         text="Haz click en cualquiera de nuestros especialistas para conocer más acerca de ellos."
