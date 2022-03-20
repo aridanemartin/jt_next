@@ -32,8 +32,6 @@ const Blog = ({ posts }) => {
             setMappedPosts([]);
         } 
     },[])
-
-    console.log(posts)
     
     return (  
         
@@ -44,26 +42,28 @@ const Blog = ({ posts }) => {
         />
         <div className={styles.postsContainer}>
             {mappedPosts.length && mappedPosts.map((p) => (
-                <Link 
-                href={`/blog/${p.slug.current}`}
-                >
-                    <a 
+                
+                    <div 
                     className={styles.postCard}
                     key={p._id}
                     >
+                    <Link 
+                key={p._id} 
+                href={`/blog/${p.slug.current}`}
+                ><a>
                         <h2>{p.title}</h2>
                         <h3>{p.author.name}</h3>
                         <p>{p.description}</p>
                         <div className={styles.postImageWrap}>
                             <img 
                             className={styles.postImage} 
-                            key={p._id} 
                             src={p.mainImage}/>
                         </div>
-                        
-                    </a>
-                </Link>
-
+                        </a>
+                        </Link>
+                    </div>
+               
+                
             ))}
         </div>
         
@@ -79,6 +79,7 @@ export const getServerSideProps = async () => {
     
     //hace la query en relacion a la url pedida por el cliente
     const query = encodeURIComponent(`*[ _type == "post"]{
+        _id,
         title,
         description,
         mainImage,

@@ -48,6 +48,10 @@
 @media (max-width: 767px) {
   .postCard{
     width: 70%;
+    text-align: center;
+  }
+  .postCard p{
+    padding: 2rem 0rem;
   }
 }
 
