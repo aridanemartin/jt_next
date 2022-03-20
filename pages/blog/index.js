@@ -31,7 +31,7 @@ const Blog = ({ posts }) => {
         }else{
             setMappedPosts([]);
         } 
-    },[])
+    },[posts])
     
     return (  
         
@@ -57,7 +57,9 @@ const Blog = ({ posts }) => {
                         <div className={styles.postImageWrap}>
                             <img 
                             className={styles.postImage} 
-                            src={p.mainImage}/>
+                            src={p.mainImage}
+                            alt={p.title}
+                            />
                         </div>
                         </a>
                         </Link>

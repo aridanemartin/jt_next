@@ -32,15 +32,14 @@
 
     font-family: Segoe UI, Arial;
     text-align: center; 
-    padding: 1rem 0rem;
-
+    padding-bottom: 2rem;
 }
 
 .postImage{
     position: relative;
     margin: 0 auto;
     max-width: 40rem;
-    height: 20rem;    
+    height: 20rem;  
 }
 
 .contentWrapper section p{
@@ -109,6 +108,7 @@
     font-family: 'Staatliches', cursive;
     font-size: 2rem;
     padding: 1rem;
+    margin: 0rem;
 }
 
 .blockContent p{
@@ -124,20 +124,54 @@
     font-size: 1rem;
 }
 
+.concertarCita{
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 1rem;
+    border: 2px solid #243648;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.concertarCita:hover{
+    background-color: #243648;
+    color: white;
+}
+
+
+.backToBlog{
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.backToBlog:hover{
+    text-decoration: underline;
+}
+
+
+
 
 @media(max-width:900px){
+
+    .title{
+        font-size: 2.2rem;
+        top: 6rem;        
+    }
     
     .postImageHero{
         margin: 0;
         height: 30rem;
     }
-.dataWrap{
-    width: 20rem;
-    display: grid;
-    grid-template-areas: "author photo"
-                        "date photo";
-    grid-gap: 0.4rem;
-    padding: 1rem;
-}
+
+    .dataWrap{
+        transform: scale(0.7);
+        width: 20rem;
+        display: grid;
+        grid-template-areas: "author photo"
+                            "date photo";
+        grid-gap: 0.4rem;
+        padding: 1rem;
+    }
 }
 

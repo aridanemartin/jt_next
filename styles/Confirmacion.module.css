@@ -1,0 +1,55 @@
+.confirmacionWrapper{
+    margin-top: 2rem;
+    height: auto;
+    text-align: center;
+    padding: 1rem;
+    
+}
+
+.confirmacionContentWrapper{
+    display: grid;
+    grid-template-areas: "formularios"
+    "proteccion";
+    /* grid-template-columns: 50% 50%; */
+}
+
+.proteccionDatos{
+    grid-area: proteccion;
+    padding: 3rem;
+}
+
+.proteccionDatos p, .proteccionDatos li{
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.formularios{
+   
+    grid-area: formularios;
+    border: 4px solid #a90101;
+    border-radius: 1rem;
+    padding: 3rem;
+    /* text-align: justify;
+    text-align-last: center; */
+}
+
+.formularios h2{
+    color: #a90101;
+    font-size: 2rem;
+    /* text-align: center; */
+    margin: 1rem 0rem;
+}
+
+.formularios p{
+    font-size: 1.2rem;
+}
+
+.formularios ul li{
+    font-size: 1.2rem;
+    font-weight: 600;
+    
+    margin: 2rem 0rem;
+    list-style: none;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgb(214, 213, 213);
+}

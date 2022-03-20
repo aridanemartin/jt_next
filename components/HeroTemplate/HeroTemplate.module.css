@@ -8,6 +8,7 @@
     animation: fadeZoom 1.4s forwards;
     animation-duration: 3s;
     transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 9px -5px rgb(0 0 0 / 15%);
 
 }
 
@@ -53,7 +54,7 @@
 @media (max-width: 1100px){
     .heroTemplateWrap{
         height: 70vh;
-        background-image: url(../../public/images/portada4.jpg);  
+        background-image: url(../../public/images/portada5.jpg);  
         background-position: center;
     }
     .heroTemplateWrap:after {

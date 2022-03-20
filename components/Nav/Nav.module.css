@@ -203,8 +203,8 @@
 
   .navLogoWrapper {
       position: relative;
-      width: 10rem;
-      height: 5rem;
+      width: 20rem;
+      height: 10rem;
       filter: invert(100%);
     
     padding: 0;
@@ -212,14 +212,10 @@
 
   .linksWrapper {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     grid-gap: 1.3rem;
     padding: 0;
     margin: 0;
-  }
-
-  .link {
-    padding: 2rem;
   }
 
   .socialContainer {

@@ -35,8 +35,16 @@
   color: white;
   padding: 1rem;
   transition: all 0.3s ease-in-out;
+  border-radius: 15rem;
+  text-transform: uppercase;
 }
 
+.buttonWrap:hover{
+  background: white;
+  transform: translateY(-0.2rem);
+  color: #243648;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
 
 .especialidadesListWrapper {
   width: 100%;

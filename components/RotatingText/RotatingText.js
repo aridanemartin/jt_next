@@ -71,11 +71,11 @@ export default function RotatingText() {
                     </div>
                 </div>
             </div>
-            <div className={styles.buttonWrap}>
+            
                 <Link href="/equipo">
-                    <a>Concertar Cita</a>
+                    <a className={styles.buttonWrap}>Concertar Cita</a>
                 </Link>
-            </div>
+            
         </div>
         
     </>

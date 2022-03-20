@@ -16,17 +16,17 @@ export default function Footer() {
                         </Link>
                     </li>
                     <li>
-                        <Link href='/'>
+                        <Link href='/equipo/dr-julian-tamayo#conoceme'>
                             <a>Conóceme</a>
                         </Link>
                     </li>
                     <li>
-                        <Link href='/'>
+                        <Link href='/blog'>
                             <a>Blog</a>
                         </Link>
                     </li>
                     <li>
-                        <Link href='/'>
+                        <Link href='/equipo'>
                             <a>Equipo</a>
                         </Link>
                     </li>
@@ -67,17 +67,10 @@ export default function Footer() {
                 <div className={styles.citaText}>
                     <p>Concierta tu cita hoy mismo conmigo o con cualquiera de los especialistas que conforman mi equipo.</p>
                 </div>
-                <div className={styles.citaButtons}>
-                    <div className={styles.Button}>
+                <div className={styles.citaButtons}>               
                         <Link href='/'>
-                            <a>Concertar cita conmigo</a>
+                            <a className={styles.Button}>Concertar cita</a>
                         </Link>
-                    </div>
-                    <div className={styles.Button}>
-                        <Link href='/'>
-                            <a>Concertar cita con algún miembro de mi equipo</a>
-                        </Link>
-                    </div>
                 </div>
             </div>
         </div>

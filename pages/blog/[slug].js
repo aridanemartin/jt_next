@@ -24,14 +24,15 @@ export const SinglePost = (data) => {
           <Image
             {...mainImageProps}
             layout="fill"
-            objectFit="none"
+            objectFit="cover"
             className={styles.image}
+            alt="Article Banner"
           />
         </div>
         
       </div>
       <article className={styles.contentWrapper}>
-        <Link href={`/equipo/${data.author.slug.current}`}>
+        <Link href={`/equipo/${data.author.slug.current}#conoceme`}>
           <a>
           <div className={styles.authorData}>
             <div className={styles.dataWrap}>
@@ -93,11 +94,11 @@ export const SinglePost = (data) => {
         )}
 
         <div className={styles.linksWrapper}>
-          <Link href="/">
-            <a>CONCERTAR CITA</a>
+          <Link href={`/equipo/${data.author.slug.current}#cita`}>
+            <a className={styles.concertarCita}>Concertar cita con {data.author.name}</a>
           </Link>
           <Link href="/blog">
-            <a>Volver al blog</a>
+            <a className={styles.backToBlog}>Volver al blog</a>
           </Link>
         </div>
       </article>
