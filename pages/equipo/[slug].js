@@ -11,6 +11,7 @@ import Separador from "@components/Separador/Separador";
 import webIcon from "../../public/images/webIcon.png";
 import doctoraliaLogo from "../../public/images/doctoraliaIcon.png";
 import bata from "../../public/images/bonoOnline.jpg";
+import Header from "@components/Header/Header";
 
 export default function SingleDoctor(props) {
   const mainImageProps = useNextSanityImage(sanityClient, props.author.image);
@@ -53,24 +54,20 @@ export default function SingleDoctor(props) {
 
   return (
     <div>
-      <div className={styles.postImageHero}>
-        <h2 className={styles.title}>
-          Reserva tu cita con {props.author.name}
-        </h2>
-        <Image
-          src={bata}
-          layout="fill"
-          objectFit="none"
-          className={styles.imageHero}
-        />
-      </div>
+      <Header image={bata} title={"Conoce a " + `${props.author.name}`} />
       <Layout>
         <div className={styles.doctorProfileWrapper}>
           <div className={styles.doctorImageWrapper}>
-            <Image {...mainImageProps} layout="fill" objectFit="cover" />
+            <Image
+              {...mainImageProps}
+              layout="fill"
+              objectFit="cover"
+              width={null}
+              height={null}
+            />
           </div>
           <section className={styles.doctorBioWrap}>
-            <h1>{props.author.name}</h1>
+            <h1 id="conoceme">{props.author.name}</h1>
             <h2>{props.author.especialidad}</h2>
             <SanityBlockContent blocks={props.author.bio} />
             <div className={styles.socialWrapper}>
@@ -91,6 +88,8 @@ export default function SingleDoctor(props) {
                         src={doctoraliaLogo}
                         layout="fill"
                         objectFit="cover"
+                        width={null}
+                        heigth={null}
                       />
                     </div>
                   </a>
@@ -215,25 +214,31 @@ export default function SingleDoctor(props) {
           {props.author.servicio1Link && (
             <Link href={formatLink(props.author.servicio1Link)}>
               <a className={styles.servicesCardWrapper}>
-                <div className={styles.servicesCard}>
-                  <div className={styles.servicesImage}>
-                    <Image
-                      {...servicio1Image}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
+                <div className={styles.servicesImage}>
+                  <Image
+                    {...servicio1Image}
+                    layout="fill"
+                    objectFit="cover"
+                    width={null}
+                    height={null}
+                  />
+                </div>
+                <div className={styles.servicesContentWrap}>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio1Title}</h2>
                     <p>{props.author.servicio1Duration}</p>
                   </div>
-                  <p className={styles.servicesDescription}>
-                    {props.author.servicio1Description}
-                  </p>
-                  <p className={styles.servicesPrice}>
-                    {props.author.servicio1Precio}
-                    {props.author.servicio1Precio ? "€" : ''}
-                  </p>
+                  <div className={styles.servicesDescription}>
+                    <SanityBlockContent
+                      blocks={props.author.servicio1Description}
+                    />
+                  </div>
+                  <div className={styles.servicesPrice}>
+                    <p>
+                      {props.author.servicio1Precio}
+                      {props.author.servicio1Precio ? "€" : ""}
+                    </p>
+                  </div>
                 </div>
               </a>
             </Link>
@@ -241,25 +246,31 @@ export default function SingleDoctor(props) {
           {props.author.servicio2Link && (
             <Link href={formatLink(props.author.servicio2Link)}>
               <a className={styles.servicesCardWrapper}>
-                <div className={styles.servicesCard}>
-                  <div className={styles.servicesImage}>
-                    <Image
-                      {...servicio2Image}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
+                <div className={styles.servicesImage}>
+                  <Image
+                    {...servicio2Image}
+                    layout="fill"
+                    objectFit="cover"
+                    width={null}
+                    heigth={null}
+                  />
+                </div>
+                <div className={styles.servicesContentWrap}>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio2Title}</h2>
                     <p>{props.author.servicio2Duration}</p>
                   </div>
-                  <p className={styles.servicesDescription}>
-                    {props.author.servicio2Description}
-                  </p>
-                  <p className={styles.servicesPrice}>
-                    {props.author.servicio2Precio}
-                    {props.author.servicio2Precio ? "€" : ''}
-                  </p>
+                  <div className={styles.servicesDescription}>
+                    <SanityBlockContent
+                      blocks={props.author.servicio2Description}
+                    />
+                  </div>
+                  <div className={styles.servicesPrice}>
+                    <p>
+                      {props.author.servicio2Precio}
+                      {props.author.servicio2Precio ? "€" : ""}
+                    </p>
+                  </div>
                 </div>
               </a>
             </Link>
@@ -273,19 +284,25 @@ export default function SingleDoctor(props) {
                       {...servicio3Image}
                       layout="fill"
                       objectFit="cover"
+                      width={null}
+                      heigth={null}
                     />
                   </div>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio3Title}</h2>
                     <p>{props.author.servicio3Duration}</p>
                   </div>
-                  <p className={styles.servicesDescription}>
-                    {props.author.servicio3Description}
-                  </p>
-                  <p className={styles.servicesPrice}>
-                    {props.author.servicio3Precio}
-                    {props.author.servicio3Precio ? "€" : ''}
-                  </p>
+                  <div className={styles.servicesDescription}>
+                    <SanityBlockContent
+                      blocks={props.author.servicio3Description}
+                    />
+                  </div>
+                  <div className={styles.servicesPrice}>
+                    <p>
+                      {props.author.servicio3Precio}
+                      {props.author.servicio3Precio ? "€" : ""}
+                    </p>
+                  </div>
                 </div>
               </a>
             </Link>
@@ -299,19 +316,25 @@ export default function SingleDoctor(props) {
                       {...servicio4Image}
                       layout="fill"
                       objectFit="cover"
+                      width={null}
+                      heigth={null}
                     />
                   </div>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio4Title}</h2>
                     <p>{props.author.servicio4Duration}</p>
                   </div>
-                  <p className={styles.servicesDescription}>
-                    {props.author.servicio4Description}
-                  </p>
-                  <p className={styles.servicesPrice}>
-                    {props.author.servicio4Precio}
-                    {props.author.servicio4Precio ? "€" : ''}
-                  </p>
+                  <div className={styles.servicesDescription}>
+                    <SanityBlockContent
+                      blocks={props.author.servicio4Description}
+                    />
+                  </div>
+                  <div className={styles.servicesPrice}>
+                    <p>
+                      {props.author.servicio4Precio}
+                      {props.author.servicio4Precio ? "€" : ""}
+                    </p>
+                  </div>
                 </div>
               </a>
             </Link>
@@ -325,44 +348,55 @@ export default function SingleDoctor(props) {
                       {...servicio5Image}
                       layout="fill"
                       objectFit="cover"
+                      width={null}
+                      heigth={null}
                     />
                   </div>
                   <div className={styles.servicesTitle}>
                     <h2>{props.author.servicio5Title}</h2>
                     <p>{props.author.servicio5Duration}</p>
                   </div>
-                  <p className={styles.servicesDescription}>
-                    {props.author.servicio5Description}
-                  </p>
-                  <p className={styles.servicesPrice}>
-                    {props.author.servicio5Precio}
-                    {props.author.servicio5Precio ? "€" : ''}
-                  </p>
+                  <div className={styles.servicesDescription}>
+                    <SanityBlockContent
+                      blocks={props.author.servicio5Description}
+                    />
+                  </div>
+                  <div className={styles.servicesPrice}>
+                    <p>
+                      {props.author.servicio5Precio}
+                      {props.author.servicio5Precio ? "€" : ""}
+                    </p>
+                  </div>
                 </div>
               </a>
             </Link>
           )}
         </section>
-        <Separador
-          title={`Reseñas de ${props.author.name}`}
-          text="Solicita cualquiera de los servicios que disponemos fácilmente desde alguno de los siguientes enlaces"
-        />
-        <section className={styles.commentSectionWrap}>
-          <InfiniteCarrousel
-            text1={props.author.comentario1}
-            autor1={props.author.comentario1autor}
-            extraido1={props.author.comentario1fuente}
-            text2={props.author.comentario2}
-            autor2={props.author.comentario2autor}
-            extraido2={props.author.comentario2fuente}
-            text3={props.author.comentario3}
-            autor3={props.author.comentario3autor}
-            extraido3={props.author.comentario3fuente}
-            text4={props.author.comentario4}
-            autor4={props.author.comentario4autor}
-            extraido4={props.author.comentario4fuente}
-          />
-        </section>
+        {props.author.comentario4autor && (
+          <>
+            <Separador
+              title={`Reseñas de ${props.author.name}`}
+              text="Solicita cualquiera de los servicios que disponemos fácilmente desde alguno de los siguientes enlaces"
+            />
+
+            <section className={styles.commentSectionWrap}>
+              <InfiniteCarrousel
+                text1={props.author.comentario1}
+                autor1={props.author.comentario1autor}
+                extraido1={props.author.comentario1fuente}
+                text2={props.author.comentario2}
+                autor2={props.author.comentario2autor}
+                extraido2={props.author.comentario2fuente}
+                text3={props.author.comentario3}
+                autor3={props.author.comentario3autor}
+                extraido3={props.author.comentario3fuente}
+                text4={props.author.comentario4}
+                autor4={props.author.comentario4autor}
+                extraido4={props.author.comentario4fuente}
+              />
+            </section>
+          </>
+        )}
       </Layout>
     </div>
   );

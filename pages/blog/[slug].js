@@ -16,7 +16,6 @@ export const SinglePost = (data) => {
 
   const image2Props = useNextSanityImage(sanityClient, data.image2);
 
-  console.log(data.author.slug)
   return (
     <>
       <div>
@@ -29,10 +28,11 @@ export const SinglePost = (data) => {
             className={styles.image}
           />
         </div>
-        {/* <BlockContent blocks={data.body}/> */}
+        
       </div>
       <article className={styles.contentWrapper}>
         <Link href={`/equipo/${data.author.slug.current}`}>
+          <a>
           <div className={styles.authorData}>
             <div className={styles.dataWrap}>
               <p className={styles.date}>{data.author.especialidad}</p>
@@ -47,6 +47,7 @@ export const SinglePost = (data) => {
               </div>
             </div>
           </div>
+          </a>
         </Link>
 
         {data.body1 && (

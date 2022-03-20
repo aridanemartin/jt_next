@@ -8,7 +8,9 @@ import Layout from "@components/Layout/Layout";
 import Separador from "@components/Separador/Separador";
 
 const Equipo = ({ author }) => {
-  function useImageProps(index) {
+  
+  
+  function setImageProps(index) {
     const mainImageProps = useNextSanityImage(
       sanityClient,
       author[index].image
@@ -35,18 +37,20 @@ const Equipo = ({ author }) => {
         <section className={styles.cardWrapper}>
           {author.map((author, index) => {
             return (
-              <>
+              <div className={styles.singleCard}  key={author.slug.current}>
                 {author.isADoctor && (
                   <Link
                     href={`/equipo/${author.slug.current}`}
-                    key={author.slug.current}
                   >
-                    <a className={styles.singleCard}>
+                    <a >
                       <div className={styles.doctorImageWrapper}>
                         <Image
-                          {...useImageProps(index)}
+                          {...setImageProps(index)}
                           layout="fill"
                           objectFit="cover"
+                          height={null}
+                          width={null}
+                          alt={`${author.name}`}
                         />
                       </div>
                       <div className={styles.cardText}>
@@ -58,7 +62,7 @@ const Equipo = ({ author }) => {
                     </a>
                   </Link>
                 )}
-              </>
+              </div>
             )
           })}
         </section>

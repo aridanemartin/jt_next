@@ -9,7 +9,7 @@ body {
   /* font-family: 'Cormorant', serif; */
   font-family: 'Source Sans Pro', sans-serif;
   /* font-family: 'Staatliches', cursive; */
-  
+  scroll-behavior: smooth;
 }
 
 a {
