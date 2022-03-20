@@ -36,7 +36,7 @@ export default function IntroBio() {
         Experto en diabetes y riesgo cardiovascular, así como todas las enfermedades que atañen al metabolismo y el eje hormonal.
         </p>
         <div className={styles.Bio__button}>
-            <LinkButton text="Conóceme" link='/about'/>
+            <LinkButton text="Conóceme" link='/equipo/dr-julian-tamayo#conoceme'/>
         </div>
         <div className={styles.Bio__logos}>
             <div className={styles.Bio__logo}>

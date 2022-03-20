@@ -9,14 +9,6 @@ import Separador from "@components/Separador/Separador";
 
 const Equipo = ({ author }) => {
   
-  
-  function setImageProps(index) {
-    const mainImageProps = useNextSanityImage(
-      sanityClient,
-      author[index].image
-    );
-    return mainImageProps;
-  }
 
   return (
     <>
@@ -45,7 +37,7 @@ const Equipo = ({ author }) => {
                     <a >
                       <div className={styles.doctorImageWrapper}>
                         <Image
-                          {...setImageProps(index)}
+                          {...useNextSanityImage(sanityClient, author.image)}
                           layout="fill"
                           objectFit="cover"
                           height={null}
