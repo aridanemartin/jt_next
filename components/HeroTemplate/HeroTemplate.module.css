@@ -67,11 +67,9 @@
     }
 }
 
-@media (max-width: 375px){
+@media (max-width: 500px){
     .heroTemplateWrap{
-        
-        background-image: url(../../public/images/portada5.jpg);
-        background-position: -450px;
+        background-position: -600px;
     }
     
 }

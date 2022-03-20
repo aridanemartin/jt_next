@@ -44,12 +44,32 @@
     font-size: 1.2rem;
 }
 
+.formularios ul, .proteccionDatos ul{
+    padding: 0rem;
+}
+
 .formularios ul li{
     font-size: 1.2rem;
     font-weight: 600;
-    
     margin: 2rem 0rem;
     list-style: none;
     padding-bottom: 2rem;
     border-bottom: 1px solid rgb(214, 213, 213);
 }
+
+@media(max-width:800px){
+    .formularios, .proteccionDatos{
+        padding: 1rem;
+    }
+
+    .formularios h2{     
+        font-size: 1.5rem;
+    }
+
+    .proteccionDatos li{
+        list-style: none;
+        text-align: center;
+    }
+}
+
+
