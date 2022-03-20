@@ -6,9 +6,43 @@ import { useNextSanityImage } from "next-sanity-image";
 import team from "../../public/images/team2.jpg";
 import Layout from "@components/Layout/Layout";
 import Separador from "@components/Separador/Separador";
+import {useState, useEffect} from "react";
+
+import imageUrlBuilder from "@sanity/image-url";
 
 const Equipo = ({ author }) => {
   
+  
+  // function setImageProps(index) {
+  //   const mainImageProps = useNextSanityImage(
+  //     sanityClient,
+  //     author[index].image
+  //   );
+  //   return mainImageProps;
+  // }
+
+  const [mappedAuthors, setMappedAuthors] = useState([]);
+
+
+    useEffect(() =>{
+        if(author.length) {
+            const imgBuilder = imageUrlBuilder({
+                projectId: '6yfev950',
+                dataset: 'production', 
+            });
+
+            setMappedAuthors(
+                author.map(author => {
+                    return {
+                        ...author,
+                        mainImage: imgBuilder.image(author.image),
+                    }
+                })
+            )
+        }else{
+            setMappedAuthors([]);
+        } 
+    },[])
 
   return (
     <>
@@ -27,7 +61,9 @@ const Equipo = ({ author }) => {
       />
       <Layout>
         <section className={styles.cardWrapper}>
-          {author.map((author, index) => {
+          {mappedAuthors.map((author) => {
+
+            console.log(author.mainImage)
             return (
               <div className={styles.singleCard}  key={author.slug.current}>
                 {author.isADoctor && (
@@ -36,12 +72,12 @@ const Equipo = ({ author }) => {
                   >
                     <a >
                       <div className={styles.doctorImageWrapper}>
-                        <Image
-                          {...useNextSanityImage(sanityClient, author.image)}
-                          layout="fill"
-                          objectFit="cover"
-                          height={null}
-                          width={null}
+                        <img
+                          src={author.mainImage}
+                          // layout="fill"
+                          // objectFit="cover"
+                          // height={null}
+                          // width={null}
                           alt={`${author.name}`}
                         />
                       </div>

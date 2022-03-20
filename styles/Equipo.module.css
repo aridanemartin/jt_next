@@ -29,35 +29,43 @@
 }
 
 .doctorImageWrapper {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.doctorImageWrapper img {
+  width: 100%;
   height: 25rem;
+  object-fit: cover;
 }
 
-.authorName{
-    color: #333;
-    font-family: "Cormorant", sans-serif;
-    font-size: 1.5rem;
-    margin: 0;
+.authorName {
+  color: #333;
+  font-family: "Cormorant", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
-.authorSpeciality{
-    color: #777;
-    font-size: 1.2rem;
-    margin: 0;
+.authorSpeciality {
+  color: #777;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.cardText{
-    padding: 1rem;
+.cardText {
+  padding: 1rem;
 }
 
 .cardWrapper {
-  
-    margin-bottom: 5rem;
+  margin-bottom: 5rem;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  
 }
 
 .singleCard {
@@ -65,18 +73,17 @@
   margin: 1rem;
   position: relative;
   height: auto;
-  
 
-transition: all 0.3s ease-in-out;
-box-shadow: 2px 2px 9px -5px rgb(0 0 0 / 15%);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 9px -5px rgb(0 0 0 / 15%);
 }
 
-.singleCard:hover{
-box-shadow:11px 11px 20px -7px rgba(0,0,0,.1);
-transform:translate(0,-2px);
+.singleCard:hover {
+  box-shadow: 11px 11px 20px -7px rgba(0, 0, 0, 0.1);
+  transform: translate(0, -2px);
 }
 
-@media(max-width: 1100px){
+@media (max-width: 1100px) {
   .postImageHero {
     height: 50vh;
     margin-top: 0rem;
@@ -85,11 +92,11 @@ transform:translate(0,-2px);
     overflow: hidden;
     z-index: -1;
   }
-  
+
   .imageHero {
     filter: brightness(70%);
   }
-  
+
   .title {
     font-family: "Cormorant", sans-serif;
     text-transform: inherit;
@@ -98,21 +105,19 @@ transform:translate(0,-2px);
     top: 7rem;
     z-index: 1;
   }
-
 }
 
-@media(max-width: 764px){
-    .cardWrapper{
-        margin: 0;
-    }
+@media (max-width: 764px) {
+  .cardWrapper {
+    margin: 0;
+    padding: 1rem;
+  }
 
+  .doctorImageWrapper {
+    height: 20rem;
+  }
 
-    .doctorImageWrapper {
-        height: 20rem;
-      }
-
-    .singleCard{
-        width: 100%;
-    }
+  .singleCard {
+    width: 100%;
+  }
 }
-

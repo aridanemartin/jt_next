@@ -1,16 +1,16 @@
 
 import imageUrlBuilder from "@sanity/image-url";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import styles from '@styles/Blog.module.css';
 import Header from "@components/Header/Header";
 import headerImage from '../../public/images/read3.jpg';
+import Link from 'next/link';
 
 const Blog = ({ posts }) => {
 
-    const router = useRouter();
 
     const [mappedPosts, setMappedPosts] = useState([]);
+
 
     useEffect(() =>{
         if(posts.length) {
@@ -32,7 +32,9 @@ const Blog = ({ posts }) => {
             setMappedPosts([]);
         } 
     },[])
+
     console.log(posts)
+    
     return (  
         
         <>
@@ -41,21 +43,26 @@ const Blog = ({ posts }) => {
         image={headerImage}
         />
         <div className={styles.postsContainer}>
-            {mappedPosts.length && mappedPosts.map((p, index) => (
-                
-                    <div 
+            {mappedPosts.length && mappedPosts.map((p) => (
+                <Link 
+                href={`/blog/${p.slug.current}`}
+                >
+                    <a 
                     className={styles.postCard}
                     key={p._id}
-                    onClick={() => router.push(`/blog/${p.slug.current}`)}>
+                    >
                         <h2>{p.title}</h2>
                         <h3>{p.author.name}</h3>
                         <p>{p.description}</p>
                         <div className={styles.postImageWrap}>
-                            <img className={styles.postImage} key={p._id} src={p.mainImage}/>
+                            <img 
+                            className={styles.postImage} 
+                            key={p._id} 
+                            src={p.mainImage}/>
                         </div>
                         
-                    </div>
-                
+                    </a>
+                </Link>
 
             ))}
         </div>
@@ -75,6 +82,7 @@ export const getServerSideProps = async () => {
         title,
         description,
         mainImage,
+        slug,
         author->,
     }| order(_createdAt asc)`);
     const url = `${process.env.SANITY_URL}query=${query}`;
