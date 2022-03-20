@@ -8,8 +8,6 @@
     animation: fadeZoom 1.4s forwards;
     animation-duration: 3s;
     transition: all 0.3s ease-in-out;
-    box-shadow: 2px 2px 9px -5px rgb(0 0 0 / 15%);
-
 }
 
 @keyframes fadeZoom{
@@ -53,19 +51,19 @@
 
 @media (max-width: 1100px){
     .heroTemplateWrap{
-        height: 70vh;
+        height: 100vh;
         background-image: url(../../public/images/portada5.jpg);  
         background-position: center;
     }
     .heroTemplateWrap:after {
-        height:70vh;
+        height:100vh;
     }
     .signWrapper{
         display: none;
     }
     .signWrapper2{
         display: block;
-        top: 25vh;
+        top: 37vh;
     }
 }
 
@@ -73,7 +71,7 @@
     .heroTemplateWrap{
         
         background-image: url(../../public/images/portada5.jpg);
-        background-position: -350px;
+        background-position: -450px;
     }
     
 }
