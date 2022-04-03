@@ -48,6 +48,16 @@
     top: 25vh;
 }
 
+@media(max-width:1300px){
+    .heroTemplateWrap{
+        background-position: 100% 10%;
+    }
+
+    .signWrapper{
+        top: 60vh;
+    }
+}
+
 
 @media (max-width: 1100px){
     .heroTemplateWrap{
