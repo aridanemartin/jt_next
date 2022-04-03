@@ -9,7 +9,7 @@ export default function MapGrid() {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.29226787979!2d-15.432566284928443!3d28.137589582615675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc409515351a3d6f%3A0x1589c0272867fa0d!2sC.%20Pdte.%20Alvear%2C%2052%2C%2035007%20Las%20Palmas%20de%20Gran%20Canaria%2C%20Las%20Palmas!5e0!3m2!1sen!2ses!4v1648913740595!5m2!1sen!2ses"
           width="100%"
           height="100%"
-          allowfullscreen=""
+          allowFullScreen
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
