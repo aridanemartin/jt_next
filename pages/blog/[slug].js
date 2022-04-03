@@ -25,7 +25,7 @@ export const SinglePost = (data) => {
             {...mainImageProps}
             layout="fill"
             objectFit="cover"
-            className={styles.image}
+            className={styles.imageHero}
             alt="Article Banner"
           />
         </div>
