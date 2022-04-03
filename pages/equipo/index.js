@@ -45,6 +45,12 @@ const Equipo = ({ author }) => {
         } 
     },[])
 
+    const mappedDoctors = mappedAuthors.filter((author) => author.isADoctor === true );
+
+    console.log(mappedDoctors);
+
+    
+
   return (
     <>
       <Header
@@ -57,7 +63,7 @@ const Equipo = ({ author }) => {
       />
       <Layout>
         <section className={styles.cardWrapper}>
-          {mappedAuthors.map((author) => {
+          {mappedDoctors.map((author) => {
 
             console.log(author.mainImage)
             return (
