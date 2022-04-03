@@ -1,0 +1,100 @@
+
+
+
+.mapGridWrapper{
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-gap: 2%;
+    height: 40rem;
+    grid-template-areas: "text map";
+    margin: 3rem 0rem;
+}
+
+.mapWrapper{
+    grid-area: map;
+}
+
+.mapWrapper iframe{
+    border: 0;
+}
+
+.contentWrapper{
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+
+    text-align: center;
+}
+
+.textWrapper{
+    font-family: 'cormorant';
+}
+
+.textWrapper h2, .buttonSectionWrapper h2{
+    font-family: 'cormorant';
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.textWrapper address{
+    font-size: 1.8rem;
+}
+
+.buttonSectionWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.buttonWrapper{
+    transform: scale(0.8);
+    padding-bottom: 0.5rem;
+    width: 70%;
+}
+
+@media(max-width:1300px){
+    .textWrapper h2, .buttonSectionWrapper h2{
+        font-size: 2rem;
+    }
+    .textWrapper address{
+        font-size: 1.5rem;
+    }
+    .buttonWrapper{
+        transform: scale(0.7);
+        padding-bottom: 0.5rem;
+        width: 80%;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .mapGridWrapper{
+        grid-template-columns: 100%;
+        height: 55rem; 
+        grid-template-areas: 
+        "map"
+        "text" ;
+        /* margin: 3rem 0rem; */
+    }
+    
+
+
+    .textWrapper h2, .buttonSectionWrapper h2{
+        font-size: 1.5rem;
+        padding: 0rem 1.5rem;
+    }
+    .textWrapper address{
+        font-size: 1.2rem;
+    }
+    .buttonWrapper{
+        transform: scale(0.7);
+        padding-bottom: 0.5rem;
+        width: 100%;
+    }
+
+}

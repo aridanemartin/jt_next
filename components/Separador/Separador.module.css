@@ -7,6 +7,7 @@
     
     margin: 0 auto;
     text-align: center;
+    margin-top: 2rem;
 }
 
 .separadorTitle{
@@ -29,7 +30,12 @@
 
 @media (max-width: 1100px){
     .separadorTitle{
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+    }
+
+    .separadorText{
+        font-size: 1rem;
+        padding: 1rem;
     }
 }
     

@@ -70,7 +70,7 @@ export default function Nav() {
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/contacto">
                 <a onClick={toggle} className={styles.link}>CONTACTO</a>
               </Link>
             </li>

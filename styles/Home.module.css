@@ -3,8 +3,8 @@
   max-width: 1140px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-gap: 2rem;
+  grid-template-columns: 32% 32% 32%;
+  grid-gap: 2%;
   margin-bottom: 5rem;
 }
 
@@ -164,9 +164,9 @@
 
 }
 
-@media(max-width: 1300px){
-  .latestPosts{
-    
+
+@media(max-width: 1175px){
+  .latestPosts{   
     grid-template-columns: 100%;
     grid-gap: 2rem;
     padding: 1rem;

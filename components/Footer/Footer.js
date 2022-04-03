@@ -68,7 +68,7 @@ export default function Footer() {
                     <p>Concierta tu cita hoy mismo conmigo o con cualquiera de los especialistas que conforman mi equipo.</p>
                 </div>
                 <div className={styles.citaButtons}>               
-                        <Link href='/'>
+                        <Link href='/equipo'>
                             <a className={styles.Button}>Concertar cita</a>
                         </Link>
                 </div>

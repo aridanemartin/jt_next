@@ -10,6 +10,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   /* font-family: 'Staatliches', cursive; */
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {

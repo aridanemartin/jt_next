@@ -110,7 +110,7 @@
 @media (max-width: 764px) {
   .cardWrapper {
     margin: 0;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
 
   .doctorImageWrapper {
