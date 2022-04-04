@@ -41,7 +41,7 @@ export default function SingleDoctor(props) {
 
   return (
     <div>
-      <Header image={bata} title={`Conoce a ${props.author.name}`} />
+      <Header image={bata} title={`${props.author.name}`} />
       <Layout>
         <div className={styles.doctorProfileWrapper}>
           <div className={styles.doctorImageWrapper}>

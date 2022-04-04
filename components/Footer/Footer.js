@@ -65,7 +65,7 @@ export default function Footer() {
             <div className={styles.citaWrap}>
 
                 <div className={styles.citaText}>
-                    <p>Concierta tu cita hoy mismo conmigo o con cualquiera de los especialistas que conforman mi equipo.</p>
+                    <p>Pide tu cita hoy mismo conmigo o con cualquiera de los especialistas que conforman mi equipo.</p>
                 </div>
                 <div className={styles.citaButtons}>               
                         <Link href='/equipo'>

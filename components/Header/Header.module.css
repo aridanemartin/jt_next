@@ -9,7 +9,7 @@
   }
   
   .imageHero {
-    filter: brightness(70%);
+    filter: brightness(60%);
   }
   
   .title {
@@ -17,6 +17,7 @@
     text-transform: uppercase;
     width: 30ch;
     font-size: 3.5rem;
+    line-height: 7rem;
   
     color: white;
     left: 50%;
@@ -37,8 +38,9 @@
     .title {
       width: 60%;
       font-size: 2.5rem;
+      line-height: inherit;
       top: 5rem;
-      transform: translate(-50%, 0%);
+      transform: translate(-50%, 100%);
     }
 
   }

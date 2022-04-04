@@ -65,7 +65,7 @@ export default function RotatingText() {
                         Fertilidad y<br/> Reproducción
                         </h2>
                         <h2 className={styles.item11}>
-                        Trastornos<br/> Hipófosis
+                        Trastornos<br/> Hipófisis
                         </h2>
 
                     </div>
