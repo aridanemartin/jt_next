@@ -18,7 +18,7 @@ export default function Nav() {
         className={
           isOpen === false
             ? styles.burger
-            : styles.burger + " " + styles.open + " " + styles.burgerOpen
+            : styles.burger + " " + styles.open
         }
         id="burger"
       >
