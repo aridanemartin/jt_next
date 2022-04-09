@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import sanityClient from "../../client";
 import { useNextSanityImage } from "next-sanity-image";
-import team from "../../public/images/team2.jpg";
+import team from "../../public/images/team2.webp";
 import Layout from "@components/Layout/Layout";
 import Separador from "@components/Separador/Separador";
 import {useState, useEffect} from "react";

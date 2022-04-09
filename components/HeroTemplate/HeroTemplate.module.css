@@ -42,8 +42,8 @@
 .signWrapper2{
     position: relative;
     display: none;
-    height: 10rem;
-    max-width: 20rem;
+    height: 15rem;
+    max-width: 30rem;
     
     top: 25vh;
 }
@@ -62,7 +62,7 @@
 @media (max-width: 1100px){
     .heroTemplateWrap{
         height: 100vh;
-        background-image: url(../../public/images/portada5.jpg);  
+        background-image: url(../../public/images/portadaIndex.webp);  
         background-position: center;
     }
     .heroTemplateWrap:after {
@@ -73,15 +73,8 @@
     }
     .signWrapper2{
         display: block;
-        top: 37vh;
+        top: 43vh;
     }
-}
-
-@media (max-width: 500px){
-    .heroTemplateWrap{
-        background-position: -600px;
-    }
-    
 }
 
 

@@ -3,7 +3,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { useEffect, useState } from "react";
 import styles from '@styles/Blog.module.css';
 import Header from "@components/Header/Header";
-import headerImage from '../../public/images/read3.jpg';
+import headerImage from '../../public/images/read3.webp';
 import Link from 'next/link';
 
 const Blog = ({ posts }) => {
