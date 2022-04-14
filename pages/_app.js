@@ -3,6 +3,7 @@ import Head from "next/head";
 import "../styles/globals.css";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "@components/Footer/Footer";
+import AriSignature from "@components/AriSignature/AriSignature";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
       </div>
 
       <Footer />
+      <AriSignature/>
     </>
   );
 }

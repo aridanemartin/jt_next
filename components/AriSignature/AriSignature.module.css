@@ -1,0 +1,21 @@
+.createdBy{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: white;
+    color: #0A2533;
+    padding: 1rem;
+    font-weight: 500;
+    
+} 
+
+.createdBy p{
+    font-weight: 500;
+}
+
+.createdBy a{
+    color: #061820;
+    font-weight: 700;
+}
