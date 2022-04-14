@@ -13,6 +13,7 @@ import doctoraliaLogo from "../../public/images/doctoraliaIcon.png";
 import bata from "../../public/images/bonoOnline.jpg";
 import Header from "@components/Header/Header";
 import { formatLink } from '../../helpers';
+import Meta from "@components/Meta/Meta";
 
 export default function SingleDoctor(props) {
   const mainImageProps = useNextSanityImage(sanityClient, props.author.image);
@@ -37,10 +38,16 @@ export default function SingleDoctor(props) {
     props.author.servicio5Image
   );
 
-
+  console.log(mainImageProps)
 
   return (
     <div>
+      <Meta 
+            title={`${props.author.name} | ${props.author.especialidad}`}
+            desc={`${props.author.name} es miembro del equipo de doctores de Julián Tamayo.`}
+            canonical={`https://www.juliantamayo.com/equipo/${props.author.slug.current}`}
+            image={mainImageProps.src}
+      />
       <Header image={bata} title={`${props.author.name}`} />
       <Layout>
         <div className={styles.doctorProfileWrapper}>
@@ -410,6 +417,7 @@ export const getServerSideProps = async (pageContext) => {
     encodeURIComponent(`*[ _type == "author" && slug.current == "${pageSlug}"]{
         _id,
         bio,
+        slug,
         especialidad,
         image,
         name,

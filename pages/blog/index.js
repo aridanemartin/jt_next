@@ -5,6 +5,7 @@ import styles from '@styles/Blog.module.css';
 import Header from "@components/Header/Header";
 import headerImage from '../../public/images/read3.webp';
 import Link from 'next/link';
+import Meta from "@components/Meta/Meta";
 
 const Blog = ({ posts }) => {
 
@@ -36,6 +37,12 @@ const Blog = ({ posts }) => {
     return (  
         
         <>
+        <Meta 
+            title="Blog | Dr. Julián Tamayo"
+            desc="En este blog encontrarás noticias y artículos relacionados con la actualidad del mundo de la endocrinología y la nutrición."
+            canonical={`https://www.juliantamayo.com/blog/`}
+            image={headerImage}
+        />
         <Header
         title='blog'
         image={headerImage}

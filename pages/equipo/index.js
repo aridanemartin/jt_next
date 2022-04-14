@@ -10,6 +10,7 @@ import {useState, useEffect} from "react";
 
 import imageUrlBuilder from "@sanity/image-url";
 import Header from "@components/Header/Header";
+import Meta from "@components/Meta/Meta";
 
 const Equipo = ({ author }) => {
   
@@ -53,6 +54,12 @@ const Equipo = ({ author }) => {
 
   return (
     <>
+     <Meta 
+            title="Equipo | Dr. Julián Tamayo"
+            desc="Conoce en profundidad al equipo del Doctor Julián Tamayo"
+            canonical="www.juliantamayo.com/equipo"
+            image="https://www.juliantamayo.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportada4.a9e48235.jpg&w=1920&q=75"
+      />
       <Header
       title="Equipo Médico"
       image={team}

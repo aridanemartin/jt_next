@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 
 import styles from "@styles/SinglePost.module.css";
+import Meta from "@components/Meta/Meta";
 
 export const SinglePost = (data) => {
   const mainImageProps = useNextSanityImage(sanityClient, data.mainImage);
@@ -18,6 +19,12 @@ export const SinglePost = (data) => {
 
   return (
     <>
+      <Meta 
+            title={`${data.title} | ${data.author.name}`}
+            desc={`${data.author.description}`}
+            canonical={`https://www.juliantamayo.com/blog/${data.author.slug.current}`}
+            image={mainImageProps.src}
+      />
       <div>
         <div className={styles.postImageHero}>
           <h2 className={styles.title}>{data.title}</h2>
