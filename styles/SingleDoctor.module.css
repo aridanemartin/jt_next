@@ -187,12 +187,22 @@
   grid-area: text;
   display: flex;
   align-items: center;
+  /* text-align: center; */
 
   margin: 0 auto;
   color: #556666;
   max-width: 50ch;
   padding: 1rem;
 }
+
+.servicesDescription p{
+  text-align: center;
+  padding: 1rem 0rem;
+}
+
+/* .servicesDescription ul li{
+  font-weight: 600;
+} */
 
 .servicesDescription ul {
   margin: 0;
@@ -256,9 +266,10 @@
     font-size: 0.8rem;
     padding: 1rem 0.5rem;
   }
+
   .servicesDescription ul{
     list-style: none;
-    text-align: center;
+    text-align: center; 
     padding: 0;
   }
 
