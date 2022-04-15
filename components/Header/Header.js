@@ -13,6 +13,7 @@ export default function Header(props) {
         layout="fill"
         objectFit="cover"
         className={styles.imageHero}
+        alt={title}
       />
     </div>
   );

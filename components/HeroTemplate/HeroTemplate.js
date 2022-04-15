@@ -17,7 +17,7 @@ export default function heroTemplate(props) {
                         priority
                         layout="fill"
                         objectFit="cover"
-
+                        alt="Julián Tamayo - Firma"
                     />
                 </div>
                 <div className={styles.signWrapper2}>
@@ -26,7 +26,7 @@ export default function heroTemplate(props) {
                         layout="responsive"
                         // layout="fill"
                         objectFit="cover"
-
+                        alt="Julián Tamayo - Logo"
                     />
                 </div>
             </div>

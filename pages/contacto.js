@@ -12,7 +12,7 @@ export default function contacto() {
         <Meta 
               title="Contacto | Dr. Julián Tamayo"
               desc="Página de contacto del Doctor Julián Tamayo"
-              canonical="www.juliantamayo.com/contacto"
+              canonical="https://www.juliantamayo.com/contacto"
               image={indexCover}
         />
         <Header

@@ -30,7 +30,7 @@ export default function IntroBio() {
             objectFit="cover"   
             />
         </div>
-        <h1 className={styles.Bio__title}><strong>Doctor Julián Tamayo</strong> <br/> Endocrinología y Nutrición</h1>
+        <h2 className={styles.Bio__title}><strong>Doctor Julián Tamayo</strong> <br/> Endocrinología y Nutrición</h2>
         <p className={styles.Bio__text}>Endocrino con más de 15 años de experiencia como profesional en el ejercicio de la medicina. Creo en un enfoque integrado de las emociones y las enfermedades crónicas, por lo que hago parte de un equipo de trabajo en pro de la recuperación de la salud y los buenos hábitos de mis pacientes.<br/><br/> Me apasiona la busqueda individual de los objetivos de la mano del paciente, de su familia y de su entorno.
         Estar al tanto de todos los avances recientes es siempre una prioridad para prestar la mejor atención y por eso no solo hago parte de la academia permanente (dictando cursos y conferencias) sino también de la formación continúa para dar el mejor enfoque integrado.
         Experto en diabetes y riesgo cardiovascular, así como todas las enfermedades que atañen al metabolismo y el eje hormonal.

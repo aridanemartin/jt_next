@@ -45,6 +45,7 @@ export default function Footer() {
               quality="50"
               priority="true"
               as="image"
+              alt="Julián Tamayo - Firma Corta"
             />
           </div>
           <div className={styles.socialContainer}>

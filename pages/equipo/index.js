@@ -57,7 +57,7 @@ const Equipo = ({ author }) => {
      <Meta 
             title="Equipo | Dr. Julián Tamayo"
             desc="Conoce en profundidad al equipo del Doctor Julián Tamayo"
-            canonical="www.juliantamayo.com/equipo"
+            canonical="https://www.juliantamayo.com/equipo"
             image="https://www.juliantamayo.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportada4.a9e48235.jpg&w=1920&q=75"
       />
       <Header
