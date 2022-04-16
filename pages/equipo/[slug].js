@@ -379,6 +379,39 @@ export default function SingleDoctor(props) {
               </a>
             </Link>
           )}
+          {props.author.servicio6Link && (
+            <Link href={formatLink(props.author.servicio6Link)}>
+              <a className={styles.servicesCardWrapper}>
+                <div className={styles.servicesCard}>
+                  <div className={styles.servicesImage}>
+                    <Image
+                      {...servicio6Image}
+                      layout="fill"
+                      objectFit="cover"
+                      width={null}
+                      heigth={null}
+                      alt={props.author.servicio6Title}
+                    />
+                  </div>
+                  <div className={styles.servicesTitle}>
+                    <h2>{props.author.servicio6Title}</h2>
+                    {props.author.servicio6Duration && <p>{props.author.servicio6Duration} min</p>}
+                  </div>
+                  <div className={styles.servicesDescription}>
+                    <SanityBlockContent
+                      blocks={props.author.servicio6Description}
+                    />
+                  </div>
+                  <div className={styles.servicesPrice}>
+                    <p>
+                      {props.author.servicio6Precio}
+                      {props.author.servicio6Precio ? "€" : ""}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
+          )}
         </section>
         {props.author.comentario4autor && (
           <>

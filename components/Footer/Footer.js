@@ -126,6 +126,10 @@ export default function Footer() {
               <a className={styles.Button}>Concertar cita</a>
             </Link>
           </div>
+          <Link href="/"><a>Política de Cookies</a></Link>
+          <Link href="/"><a>Política de Privacidad</a></Link>
+          <Link href="/"><a>Aviso Legal</a></Link>
+          
         </div>
       </div>
     </div>
