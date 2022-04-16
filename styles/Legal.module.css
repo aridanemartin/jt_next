@@ -1,0 +1,12 @@
+@media (max-width: 1450px) {
+  .legalText p,
+  .legalText h1,
+  .legalText h2,
+  .legalText ul,
+  .legalText li,
+  .legalText a {
+    padding: 1rem;
+    text-align: center;
+    list-style: none;
+  }
+}
