@@ -129,13 +129,13 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.legal}>
-            <Link href="/">
+            <Link href="/legal/politica-de-cookies">
               <a>Política de Cookies</a>
             </Link>
-            <Link href="/">
+            <Link href="/legal/politica-de-privacidad">
               <a>Política de Privacidad</a>
             </Link>
-            <Link href="/">
+            <Link href="/legal/aviso-legal">
               <a>Aviso Legal</a>
             </Link>
           </div>
