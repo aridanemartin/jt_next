@@ -507,7 +507,13 @@ export const getServerSideProps = async (pageContext) => {
         servicio5Duration,
         servicio5Description,
         servicio5Link,
-        servicio5Precio
+        servicio5Precio,
+        servicio6Image,
+        servicio6Title,
+        servicio6Duration,
+        servicio6Description,
+        servicio6Link,
+        servicio6Precio
     }`);
   const url = `https://6yfev950.api.sanity.io/v2021-08-31/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());
