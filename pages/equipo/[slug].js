@@ -37,6 +37,10 @@ export default function SingleDoctor(props) {
     sanityClient,
     props.author.servicio5Image
   );
+  const servicio6Image = useNextSanityImage(
+    sanityClient,
+    props.author.servicio6Image
+  );
 
   console.log(mainImageProps)
 

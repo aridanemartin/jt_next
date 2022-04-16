@@ -76,6 +76,18 @@
     
 }
 
+.legal{
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.legal a{
+    color: white;
+    font-size: 0.8rem;
+    padding: 1rem;
+}
+
 .citaWrap{
     display: flex;
     flex-direction: column;
@@ -146,6 +158,19 @@
 
 
 @media(max-width: 400px){
+    .legal{
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+    .legal a{
+        padding: 0.5rem;
+    }
+
+    .citaWrap{
+        margin-bottom: 0;
+    }
+
     .citaButtons{
         flex-direction: column;
     }
