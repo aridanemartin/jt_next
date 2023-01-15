@@ -19,11 +19,11 @@ export const SinglePost = (data) => {
 
   return (
     <>
-      <Meta 
-            title={`${data.title} | ${data.author.name}`}
-            desc={`${data.author.description}`}
-            canonical={`https://www.juliantamayo.com/blog/${data.author.slug.current}`}
-            image={mainImageProps.src}
+      <Meta
+        title={`${data.title} | ${data.author.name}`}
+        desc={`${data.author.description}`}
+        canonical={`https://www.juliantamayo.com/blog/${data.author.slug.current}`}
+        image={mainImageProps.src}
       />
       <div>
         <div className={styles.postImageHero}>
@@ -36,11 +36,9 @@ export const SinglePost = (data) => {
             alt="Article Banner"
           />
         </div>
-        
       </div>
       <article className={styles.contentWrapper}>
         <Link href={`/equipo/${data.author.slug.current}#conoceme`}>
-          <a>
           <div className={styles.authorData}>
             <div className={styles.dataWrap}>
               <p className={styles.date}>{data.author.especialidad}</p>
@@ -55,7 +53,6 @@ export const SinglePost = (data) => {
               </div>
             </div>
           </div>
-          </a>
         </Link>
 
         {data.body1 && (
@@ -101,11 +98,14 @@ export const SinglePost = (data) => {
         )}
 
         <div className={styles.linksWrapper}>
-          <Link href={`/equipo/${data.author.slug.current}#cita`}>
-            <a className={styles.concertarCita}>Concertar cita con {data.author.name}</a>
+          <Link
+            href={`/equipo/${data.author.slug.current}#cita`}
+            className={styles.concertarCita}
+          >
+            Concertar cita con {data.author.name}
           </Link>
-          <Link href="/blog">
-            <a className={styles.backToBlog}>Volver al blog</a>
+          <Link href="/blog" className={styles.backToBlog}>
+            Volver al blog
           </Link>
         </div>
       </article>
