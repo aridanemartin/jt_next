@@ -2,7 +2,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
 import sanityClient from "../../client";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 
 import styles from "@styles/SinglePost.module.css";
@@ -17,100 +17,106 @@ export const SinglePost = (data) => {
 
   const image2Props = useNextSanityImage(sanityClient, data.image2);
 
-  return (
-    <>
-      <Meta
-        title={`${data.title} | ${data.author.name}`}
-        desc={`${data.author.description}`}
-        canonical={`https://www.juliantamayo.com/blog/${data.author.slug.current}`}
-        image={mainImageProps.src}
-      />
-      <div>
-        <div className={styles.postImageHero}>
-          <h2 className={styles.title}>{data.title}</h2>
-          <Image
-            {...mainImageProps}
-            layout="fill"
-            objectFit="cover"
-            className={styles.imageHero}
-            alt="Article Banner"
-          />
-        </div>
+  return <>
+    <Meta
+      title={`${data.title} | ${data.author.name}`}
+      desc={`${data.author.description}`}
+      canonical={`https://www.juliantamayo.com/blog/${data.author.slug.current}`}
+      image={mainImageProps.src}
+    />
+    <div>
+      <div className={styles.postImageHero}>
+        <h2 className={styles.title}>{data.title}</h2>
+        <Image
+          {...mainImageProps}
+          className={styles.imageHero}
+          alt="Article Banner"
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
       </div>
-      <article className={styles.contentWrapper}>
-        <Link href={`/equipo/${data.author.slug.current}#conoceme`}>
-          <div className={styles.authorData}>
-            <div className={styles.dataWrap}>
-              <p className={styles.date}>{data.author.especialidad}</p>
-              <p className={styles.author}>{data.author.name}</p>
-              <div className={styles.authorImage}>
-                <Image
-                  {...authorImageProps}
-                  layout="fill"
-                  objectFit="cover"
-                  alt={`${data.author.name} Foto de Perfil`}
-                />
-              </div>
+    </div>
+    <article className={styles.contentWrapper}>
+      <Link href={`/equipo/${data.author.slug.current}#conoceme`}>
+        <div className={styles.authorData}>
+          <div className={styles.dataWrap}>
+            <p className={styles.date}>{data.author.especialidad}</p>
+            <p className={styles.author}>{data.author.name}</p>
+            <div className={styles.authorImage}>
+              <Image
+                {...authorImageProps}
+                alt={`${data.author.name} Foto de Perfil`}
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "cover"
+                }} />
             </div>
           </div>
-        </Link>
-
-        {data.body1 && (
-          <section className={styles.blockContent}>
-            <BlockContent blocks={data.body1} />
-          </section>
-        )}
-
-        {data.image1 && (
-          <div className={styles.postImage}>
-            <Image
-              {...image1Props}
-              layout="fill"
-              objectFit="cover"
-              alt={`${data.title} - Foto de artículo *2`}
-            />
-          </div>
-        )}
-
-        {data.body2 && (
-          <section className={styles.blockContent}>
-            <BlockContent blocks={data.body2} />
-          </section>
-        )}
-
-        {data.image2 && (
-          <div className={styles.postImage}>
-            <Image
-              {...image2Props}
-              layout="fill"
-              objectFit="cover"
-              alt={`${data.title} - Foto de artículo *2`}
-            />
-          </div>
-        )}
-
-        {data.body3 ? (
-          <section className={styles.blockContent}>
-            <BlockContent blocks={data.body3} />
-          </section>
-        ) : (
-          ""
-        )}
-
-        <div className={styles.linksWrapper}>
-          <Link
-            href={`/equipo/${data.author.slug.current}#cita`}
-            className={styles.concertarCita}
-          >
-            Concertar cita con {data.author.name}
-          </Link>
-          <Link href="/blog" className={styles.backToBlog}>
-            Volver al blog
-          </Link>
         </div>
-      </article>
-    </>
-  );
+      </Link>
+
+      {data.body1 && (
+        <section className={styles.blockContent}>
+          <BlockContent blocks={data.body1} />
+        </section>
+      )}
+
+      {data.image1 && (
+        <div className={styles.postImage}>
+          <Image
+            {...image1Props}
+            alt={`${data.title} - Foto de artículo *2`}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover"
+            }} />
+        </div>
+      )}
+
+      {data.body2 && (
+        <section className={styles.blockContent}>
+          <BlockContent blocks={data.body2} />
+        </section>
+      )}
+
+      {data.image2 && (
+        <div className={styles.postImage}>
+          <Image
+            {...image2Props}
+            alt={`${data.title} - Foto de artículo *2`}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover"
+            }} />
+        </div>
+      )}
+
+      {data.body3 ? (
+        <section className={styles.blockContent}>
+          <BlockContent blocks={data.body3} />
+        </section>
+      ) : (
+        ""
+      )}
+
+      <div className={styles.linksWrapper}>
+        <Link
+          href={`/equipo/${data.author.slug.current}#cita`}
+          className={styles.concertarCita}
+        >
+          Concertar cita con {data.author.name}
+        </Link>
+        <Link href="/blog" className={styles.backToBlog}>
+          Volver al blog
+        </Link>
+      </div>
+    </article>
+  </>;
 };
 
 export const getServerSideProps = async (pageContext) => {

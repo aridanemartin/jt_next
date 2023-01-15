@@ -2,14 +2,14 @@ import sanityClient from "../../client";
 import { useNextSanityImage } from "next-sanity-image";
 
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "@styles/SingleDoctor.module.css";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import Layout from "@components/Layout/Layout";
 import InfiniteCarrousel from "@components/InfiniteCarrousel/InfiniteCarrousel";
 import Separador from "@components/Separador/Separador";
 import webIcon from "../../public/images/webIcon.png";
-import doctoraliaLogo from "../../public/images/doctoraliaIcon.png";
+import doctoraliaLogo from "../../public/images/logos/doctoralia.svg";
 import bata from "../../public/images/bonoOnline.jpg";
 import Header from "@components/Header/Header";
 import { formatLink } from "../../helpers";
@@ -42,8 +42,6 @@ export default function SingleDoctor(props) {
     props.author.servicio6Image
   );
 
-  console.log(mainImageProps);
-
   return (
     <div>
       <Meta
@@ -57,12 +55,10 @@ export default function SingleDoctor(props) {
         <div className={styles.doctorProfileWrapper}>
           <div className={styles.doctorImageWrapper}>
             <Image
-              {...mainImageProps}
-              layout="fill"
-              objectFit="cover"
-              width={null}
-              height={null}
+              src={mainImageProps.src}
               alt={`${props.author.name} - Profile Picture`}
+              fill
+              style={{ objectFit: "cover" }}
             />
           </div>
           <section className={styles.doctorBioWrap}>
@@ -79,9 +75,11 @@ export default function SingleDoctor(props) {
                   <div className={styles.socialIcon}>
                     <Image
                       src={webIcon}
-                      layout="fill"
-                      objectFit="cover"
                       alt="Web Icon"
+                      sizes="100vw"
+                      style={{
+                        objectFit: "cover",
+                      }}
                     />
                   </div>
                 </Link>
@@ -95,11 +93,10 @@ export default function SingleDoctor(props) {
                   <div className={styles.socialIcon}>
                     <Image
                       src={doctoraliaLogo}
-                      layout="fill"
-                      objectFit="cover"
-                      width={null}
-                      heigth={null}
-                      alt="Doctoralia Icon"
+                      fill
+                      style={{
+                        objectFit: "cover",
+                      }}
                     />
                   </div>
                 </Link>
@@ -112,7 +109,6 @@ export default function SingleDoctor(props) {
                 >
                   <div className={styles.socialIcon}>
                     <svg
-                      fill="#000000"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       width="100%"
@@ -133,7 +129,6 @@ export default function SingleDoctor(props) {
                 >
                   <div className={styles.socialIcon}>
                     <svg
-                      fill="#000000"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 50 50"
                       width="100%"
@@ -152,7 +147,6 @@ export default function SingleDoctor(props) {
                 >
                   <div className={styles.socialIcon}>
                     <svg
-                      fill="#000000"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 30 30"
                       width="100%"
@@ -172,7 +166,6 @@ export default function SingleDoctor(props) {
                 >
                   <div className={styles.socialIcon}>
                     <svg
-                      fill="#000000"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 30 30"
                       width="100%"
@@ -193,7 +186,6 @@ export default function SingleDoctor(props) {
                 >
                   <div className={styles.socialIcon}>
                     <svg
-                      fill="#000000"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 30 30"
                       width="100%"
@@ -213,7 +205,6 @@ export default function SingleDoctor(props) {
                 >
                   <div className={styles.socialIcon}>
                     <svg
-                      fill="#000000"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 50 50"
                       width="100%"
@@ -241,12 +232,13 @@ export default function SingleDoctor(props) {
             >
               <div className={styles.servicesImage}>
                 <Image
-                  {...servicio1Image}
-                  layout="fill"
-                  objectFit="cover"
-                  width={null}
-                  height={null}
+                  src={servicio1Image.src}
+                  fill
                   alt={props.author.servicio1Title}
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
                 />
               </div>
               <div className={styles.servicesContentWrap}>
@@ -277,12 +269,13 @@ export default function SingleDoctor(props) {
             >
               <div className={styles.servicesImage}>
                 <Image
-                  {...servicio2Image}
-                  layout="fill"
-                  objectFit="cover"
-                  width={null}
-                  heigth={null}
+                  src={servicio2Image.src}
+                  fill
                   alt={props.author.servicio2Title}
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
                 />
               </div>
               <div className={styles.servicesContentWrap}>
@@ -314,12 +307,13 @@ export default function SingleDoctor(props) {
               <div className={styles.servicesCard}>
                 <div className={styles.servicesImage}>
                   <Image
-                    {...servicio3Image}
-                    layout="fill"
-                    objectFit="cover"
-                    width={null}
-                    heigth={null}
+                    src={servicio3Image.src}
+                    fill
                     alt={props.author.servicio3Title}
+                    sizes="100vw"
+                    style={{
+                      objectFit: "cover",
+                    }}
                   />
                 </div>
                 <div className={styles.servicesTitle}>
@@ -350,12 +344,13 @@ export default function SingleDoctor(props) {
               <div className={styles.servicesCard}>
                 <div className={styles.servicesImage}>
                   <Image
-                    {...servicio4Image}
-                    layout="fill"
-                    objectFit="cover"
-                    width={null}
-                    heigth={null}
+                    src={servicio4Image.src}
+                    fill
                     alt={props.author.servicio4Title}
+                    sizes="100vw"
+                    style={{
+                      objectFit: "cover",
+                    }}
                   />
                 </div>
                 <div className={styles.servicesTitle}>
@@ -384,12 +379,13 @@ export default function SingleDoctor(props) {
                 <div className={styles.servicesCard}>
                   <div className={styles.servicesImage}>
                     <Image
-                      {...servicio5Image}
-                      layout="fill"
-                      objectFit="cover"
-                      width={null}
-                      heigth={null}
+                      src={servicio5Image.src}
+                      fill
                       alt={props.author.servicio5Title}
+                      sizes="100vw"
+                      style={{
+                        objectFit: "cover",
+                      }}
                     />
                   </div>
                   <div className={styles.servicesTitle}>
@@ -419,12 +415,13 @@ export default function SingleDoctor(props) {
                 <div className={styles.servicesCard}>
                   <div className={styles.servicesImage}>
                     <Image
-                      {...servicio6Image}
-                      layout="fill"
-                      objectFit="cover"
-                      width={null}
-                      heigth={null}
+                      src={servicio6Image.src}
+                      fill
                       alt={props.author.servicio6Title}
+                      sizes="100vw"
+                      style={{
+                        objectFit: "cover",
+                      }}
                     />
                   </div>
                   <div className={styles.servicesTitle}>
