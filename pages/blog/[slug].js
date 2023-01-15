@@ -2,7 +2,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
 import sanityClient from "../../client";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useNextSanityImage } from "next-sanity-image";
 
 import styles from "@styles/SinglePost.module.css";

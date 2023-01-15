@@ -2,7 +2,7 @@ import sanityClient from "../../client";
 import { useNextSanityImage } from "next-sanity-image";
 
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "@styles/SingleDoctor.module.css";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import Layout from "@components/Layout/Layout";
