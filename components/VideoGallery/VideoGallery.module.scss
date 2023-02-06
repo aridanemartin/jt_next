@@ -1,0 +1,52 @@
+.videoGallery {
+  width: 100%;
+  display: flex;
+  // flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+
+  .videoCard {
+    color: #2d2424;
+    padding: 1rem;
+    padding: 1rem;
+    width: 50%;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+      font-family: "Cormorant";
+      color: #333333;
+      font-size: 2rem;
+      margin: 0;
+      padding-bottom: 1rem;
+
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    iframe {
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .videoGallery {
+    flex-direction: column;
+    .videoCard {
+      width: 100%;
+
+      h1 {
+        white-space: normal;
+      }
+    }
+  }
+}

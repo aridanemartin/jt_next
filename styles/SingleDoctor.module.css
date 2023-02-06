@@ -108,7 +108,6 @@
 
 .commentSectionWrap {
   grid-area: comments;
-  background: blue;
   height: auto;
 }
 

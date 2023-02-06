@@ -14,6 +14,8 @@ import bata from "../../public/images/bonoOnline.jpg";
 import Header from "@components/Header/Header";
 import { formatLink } from "../../helpers";
 import Meta from "@components/Meta/Meta";
+import { VideoGallery } from "@components/VideoGallery/VideoGallery";
+import { PressGallery } from "@components/PressGallery/PressGallery";
 
 export default function SingleDoctor(props) {
   const mainImageProps = useNextSanityImage(sanityClient, props.author.image);
@@ -41,7 +43,7 @@ export default function SingleDoctor(props) {
     sanityClient,
     props.author.servicio6Image
   );
-
+  console.log(props.author);
   return (
     <div>
       <Meta
@@ -76,6 +78,7 @@ export default function SingleDoctor(props) {
                     <Image
                       src={webIcon}
                       alt="Web Icon"
+                      fill
                       sizes="100vw"
                       style={{
                         objectFit: "cover",
@@ -93,6 +96,7 @@ export default function SingleDoctor(props) {
                   <div className={styles.socialIcon}>
                     <Image
                       src={doctoraliaLogo}
+                      alt="Doctoralia Logo"
                       fill
                       style={{
                         objectFit: "cover",
@@ -471,6 +475,37 @@ export default function SingleDoctor(props) {
             </section>
           </>
         )}
+        <VideoGallery
+          videoArray={[
+            {
+              title: `${props.author.video1title}`,
+              src: `${props.author.video1url}`,
+            },
+            {
+              title: `${props.author.video2title}`,
+              src: `${props.author.video2url}`,
+            },
+            {
+              title: `${props.author.video3title}`,
+              src: `${props.author.video3url}`,
+            },
+            {
+              title: `${props.author.video4title}`,
+              src: `${props.author.video4url}`,
+            },
+          ]}
+          author={props.author.name}
+        />
+        <PressGallery
+          data={[
+            props.author.articulo1,
+            props.author.articulo2,
+            props.author.articulo3,
+            props.author.articulo4,
+          ]}
+          sanityClient={sanityClient}
+          author={props.author.name}
+        />
       </Layout>
     </div>
   );
@@ -542,7 +577,19 @@ export const getServerSideProps = async (pageContext) => {
         servicio6Duration,
         servicio6Description,
         servicio6Link,
-        servicio6Precio
+        servicio6Precio,
+        video1title,
+        video1url,
+        video2title,
+        video2url,
+        video3title,
+        video3url,
+        video4title,
+        video4url,
+        articulo1,
+        articulo2,
+        articulo3,
+        articulo4,       
     }`);
   const url = `https://6yfev950.api.sanity.io/v2021-08-31/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());

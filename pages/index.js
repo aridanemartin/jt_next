@@ -1,17 +1,15 @@
-import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import indexCover from "../public/images/portada4.jpg";
 import Separador from "@components/Separador/Separador";
 import IntroBio from "@components/IntroBio/IntroBio";
 import HeroTemplate from "@components/HeroTemplate/HeroTemplate";
-import Link from "next/link";
 import RotatingText from "@components/RotatingText/RotatingText";
 import Layout from "@components/Layout/Layout";
 import { useEffect, useState } from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import Meta from "@components/Meta/Meta";
+import { PostPreview } from "@components/PostPreview/PostPreview";
 
 export default function Home({ posts }) {
   const [mappedPosts, setMappedPosts] = useState([]);
@@ -64,42 +62,11 @@ export default function Home({ posts }) {
         <div className={styles.latestPosts}>
           {mappedPosts.map((post) => {
             return (
-              <Link key={post.slug.current} href={`blog/${post.slug.current}`}>
-                <div className={styles.postPreviewWrapper} key={post._id}>
-                  <div className={styles.imgWrapper}>
-                    <img src={post.mainImage} />
-                  </div>
-                  {post.categories &&
-                    post.categories.map((category) => (
-                      <p
-                        key={category._id}
-                        className={
-                          styles.categoryWrapper + " " + styles[category.color]
-                        }
-                      >
-                        {category.title}
-                      </p>
-                    ))}
-                  <p id={post.title} className={styles.postTitle}>
-                    {post.title}
-                  </p>
-                  <div className={styles.authorData}>
-                    <div className={styles.dataWrap}>
-                      <p className={styles.date}>{post.author.especialidad}</p>
-                      <p className={styles.author}>{post.author.name}</p>
-                      <div className={styles.authorImage}>
-                        <img src={post.authorImage} />
-                      </div>
-                    </div>
-                  </div>
-                  <section
-                    className={styles.postDescription}
-                    aria-labelledby={post.title}
-                  >
-                    {post.description}
-                  </section>
-                </div>
-              </Link>
+              <PostPreview
+                key={post._id}
+                post={post}
+                link={`blog/${post.slug.current}`}
+              />
             );
           })}
         </div>
