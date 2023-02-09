@@ -17,26 +17,26 @@ export const SinglePost = (data) => {
 
   const image2Props = useNextSanityImage(sanityClient, data.image2);
 
-  console.log(mainImageProps);
   return (
     <>
       <Meta
         title={`${data.title} | ${data.author.name}`}
         desc={`${data.author.description}`}
         canonical={`https://www.juliantamayo.com/blog/${data.author.slug.current}`}
-        image={mainImageProps.src}
+        image={mainImageProps?.src}
       />
       <div>
         <div className={styles.postImageHero}>
           <h2 className={styles.title}>{data.title}</h2>
           <Image
-            src={mainImageProps.src}
+            src={mainImageProps?.src}
             className={styles.imageHero}
             alt="Article Banner"
             fill
             style={{
               objectFit: "cover",
             }}
+            quality={40}
           />
         </div>
       </div>
@@ -48,7 +48,7 @@ export const SinglePost = (data) => {
               <p className={styles.author}>{data.author.name}</p>
               <div className={styles.authorImage}>
                 <Image
-                  src={authorImageProps.src}
+                  src={authorImageProps?.src}
                   alt={`${data.author.name} Foto de Perfil`}
                   fill
                   quality={25}
@@ -71,7 +71,7 @@ export const SinglePost = (data) => {
         {data.image1 && (
           <div className={styles.postImage}>
             <Image
-              src={image1Props.src}
+              src={image1Props?.src}
               alt={`${data.title} - Foto de artículo *2`}
               fill
               sizes="100vw"
@@ -91,7 +91,7 @@ export const SinglePost = (data) => {
         {data.image2 && (
           <div className={styles.postImage}>
             <Image
-              src={image2Props.src}
+              src={image2Props?.src}
               alt={`${data.title} - Foto de artículo *2`}
               fill
               sizes="100vw"

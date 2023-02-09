@@ -308,35 +308,33 @@ export default function SingleDoctor(props) {
               href={formatLink(props.author.servicio3Link)}
               className={styles.servicesCardWrapper}
             >
-              <div className={styles.servicesCard}>
-                <div className={styles.servicesImage}>
-                  <Image
-                    src={servicio3Image.src}
-                    fill
-                    alt={props.author.servicio3Title}
-                    sizes="100vw"
-                    style={{
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-                <div className={styles.servicesTitle}>
-                  <h2>{props.author.servicio3Title}</h2>
-                  {props.author.servicio3Duration && (
-                    <p>{props.author.servicio3Duration} min</p>
-                  )}
-                </div>
-                <div className={styles.servicesDescription}>
-                  <SanityBlockContent
-                    blocks={props.author.servicio3Description}
-                  />
-                </div>
-                <div className={styles.servicesPrice}>
-                  <p>
-                    {props.author.servicio3Precio}
-                    {props.author.servicio3Precio ? "€" : ""}
-                  </p>
-                </div>
+              <div className={styles.servicesImage}>
+                <Image
+                  src={servicio3Image.src}
+                  fill
+                  alt={props.author.servicio3Title}
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <div className={styles.servicesTitle}>
+                <h2>{props.author.servicio3Title}</h2>
+                {props.author.servicio3Duration && (
+                  <p>{props.author.servicio3Duration} min</p>
+                )}
+              </div>
+              <div className={styles.servicesDescription}>
+                <SanityBlockContent
+                  blocks={props.author.servicio3Description}
+                />
+              </div>
+              <div className={styles.servicesPrice}>
+                <p>
+                  {props.author.servicio3Precio}
+                  {props.author.servicio3Precio ? "€" : ""}
+                </p>
               </div>
             </Link>
           )}
@@ -345,108 +343,104 @@ export default function SingleDoctor(props) {
               href={formatLink(props.author.servicio4Link)}
               className={styles.servicesCardWrapper}
             >
-              <div className={styles.servicesCard}>
-                <div className={styles.servicesImage}>
-                  <Image
-                    src={servicio4Image.src}
-                    fill
-                    alt={props.author.servicio4Title}
-                    sizes="100vw"
-                    style={{
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-                <div className={styles.servicesTitle}>
-                  <h2>{props.author.servicio4Title}</h2>
-                  {props.author.servicio4Duration && (
-                    <p>{props.author.servicio4Duration} min</p>
-                  )}
-                </div>
-                <div className={styles.servicesDescription}>
-                  <SanityBlockContent
-                    blocks={props.author.servicio4Description}
-                  />
-                </div>
-                <div className={styles.servicesPrice}>
-                  <p>
-                    {props.author.servicio4Precio}
-                    {props.author.servicio4Precio ? "€" : ""}
-                  </p>
-                </div>
+              <div className={styles.servicesImage}>
+                <Image
+                  src={servicio4Image.src}
+                  fill
+                  alt={props.author.servicio4Title}
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <div className={styles.servicesTitle}>
+                <h2>{props.author.servicio4Title}</h2>
+                {props.author.servicio4Duration && (
+                  <p>{props.author.servicio4Duration} min</p>
+                )}
+              </div>
+              <div className={styles.servicesDescription}>
+                <SanityBlockContent
+                  blocks={props.author.servicio4Description}
+                />
+              </div>
+              <div className={styles.servicesPrice}>
+                <p>
+                  {props.author.servicio4Precio}
+                  {props.author.servicio4Precio ? "€" : ""}
+                </p>
               </div>
             </Link>
           )}
           {props.author.servicio5Link && (
-            <Link href={formatLink(props.author.servicio5Link)}>
-              <a className={styles.servicesCardWrapper}>
-                <div className={styles.servicesCard}>
-                  <div className={styles.servicesImage}>
-                    <Image
-                      src={servicio5Image.src}
-                      fill
-                      alt={props.author.servicio5Title}
-                      sizes="100vw"
-                      style={{
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                  <div className={styles.servicesTitle}>
-                    <h2>{props.author.servicio5Title}</h2>
-                    {props.author.servicio5Duration && (
-                      <p>{props.author.servicio5Duration} min</p>
-                    )}
-                  </div>
-                  <div className={styles.servicesDescription}>
-                    <SanityBlockContent
-                      blocks={props.author.servicio5Description}
-                    />
-                  </div>
-                  <div className={styles.servicesPrice}>
-                    <p>
-                      {props.author.servicio5Precio}
-                      {props.author.servicio5Precio ? "€" : ""}
-                    </p>
-                  </div>
-                </div>
-              </a>
+            <Link
+              href={formatLink(props.author.servicio5Link)}
+              className={styles.servicesCardWrapper}
+            >
+              <div className={styles.servicesImage}>
+                <Image
+                  src={servicio5Image.src}
+                  fill
+                  alt={props.author.servicio5Title}
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <div className={styles.servicesTitle}>
+                <h2>{props.author.servicio5Title}</h2>
+                {props.author.servicio5Duration && (
+                  <p>{props.author.servicio5Duration} min</p>
+                )}
+              </div>
+              <div className={styles.servicesDescription}>
+                <SanityBlockContent
+                  blocks={props.author.servicio5Description}
+                />
+              </div>
+              <div className={styles.servicesPrice}>
+                <p>
+                  {props.author.servicio5Precio}
+                  {props.author.servicio5Precio ? "€" : ""}
+                </p>
+              </div>
             </Link>
           )}
           {props.author.servicio6Link && (
-            <Link href={formatLink(props.author.servicio6Link)}>
-              <a className={styles.servicesCardWrapper}>
-                <div className={styles.servicesCard}>
-                  <div className={styles.servicesImage}>
-                    <Image
-                      src={servicio6Image.src}
-                      fill
-                      alt={props.author.servicio6Title}
-                      sizes="100vw"
-                      style={{
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                  <div className={styles.servicesTitle}>
-                    <h2>{props.author.servicio6Title}</h2>
-                    {props.author.servicio6Duration && (
-                      <p>{props.author.servicio6Duration} min</p>
-                    )}
-                  </div>
-                  <div className={styles.servicesDescription}>
-                    <SanityBlockContent
-                      blocks={props.author.servicio6Description}
-                    />
-                  </div>
-                  <div className={styles.servicesPrice}>
-                    <p>
-                      {props.author.servicio6Precio}
-                      {props.author.servicio6Precio ? "€" : ""}
-                    </p>
-                  </div>
-                </div>
-              </a>
+            <Link
+              href={formatLink(props.author.servicio6Link)}
+              className={styles.servicesCardWrapper}
+            >
+              <div className={styles.servicesImage}>
+                <Image
+                  src={servicio6Image.src}
+                  fill
+                  alt={props.author.servicio6Title}
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <div className={styles.servicesTitle}>
+                <h2>{props.author.servicio6Title}</h2>
+                {props.author.servicio6Duration && (
+                  <p>{props.author.servicio6Duration} min</p>
+                )}
+              </div>
+              <div className={styles.servicesDescription}>
+                <SanityBlockContent
+                  blocks={props.author.servicio6Description}
+                />
+              </div>
+              <div className={styles.servicesPrice}>
+                <p>
+                  {props.author.servicio6Precio}
+                  {props.author.servicio6Precio ? "€" : ""}
+                </p>
+              </div>
             </Link>
           )}
         </section>

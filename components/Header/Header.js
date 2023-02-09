@@ -8,7 +8,12 @@ export default function Header(props) {
   return (
     <div className={styles.postImageHero}>
       <h1 className={styles.title}>{title}</h1>
-      <Image src={image} className={styles.imageHero} alt={title} />
+      <Image
+        src={image}
+        className={styles.imageHero}
+        alt={title}
+        quality={30}
+      />
     </div>
   );
 }

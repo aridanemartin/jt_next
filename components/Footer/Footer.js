@@ -44,10 +44,8 @@ export default function Footer() {
           <div className={styles.logoWrap}>
             <Image
               src={firmaBlancaCorta}
-              layout="responsive"
-              quality="50"
-              priority="true"
-              as="image"
+              fill
+              quality={25}
               alt="Julián Tamayo - Firma Corta"
             />
           </div>

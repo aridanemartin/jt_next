@@ -6,12 +6,8 @@ export default function ArticleList({ props }) {
   return (
     <div className={styles.post}>
       <div className={styles.imgWrapper}>
-        <img src={props.image} alt="" />
-        {/* <Image
-                        src={image}
-                        layout="fill"
-                        objectFit="cover"
-                    /> */}
+        {/* <img src={props.image} alt="" /> */}
+        <Image src={image} fill style={{ objectFit: "cover" }} />
       </div>
       <div className={styles.description}>
         <h3>{props.description}</h3>

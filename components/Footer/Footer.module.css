@@ -1,182 +1,180 @@
-.footerWrap{
-    margin-top: 2rem;
-    width: 100%;
-    height: auto;
-    background: linear-gradient(300deg, rgba(28,44,57,1) 0%, rgba(36,54,72,1) 30%, rgba(65,100,135,1) 100%);
-
+.footerWrap {
+  margin-top: 2rem;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(
+    300deg,
+    rgba(28, 44, 57, 1) 0%,
+    rgba(36, 54, 72, 1) 30%,
+    rgba(65, 100, 135, 1) 100%
+  );
 }
 
-.footerContentWrap{
-    max-width: 1440px;
-    margin: 0 auto;
+.footerContentWrap {
+  max-width: 1440px;
+  margin: 0 auto;
 
-    padding: 1rem;
-    padding-top: 2rem;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+  padding: 1rem;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
 
-.menuContent{
-    margin: 2rem 0rem;
+.menuContent {
+  margin: 2rem 0rem;
 }
 
-.menuContent li{
-    list-style: none;
-    padding: 0.3rem 0rem;
+.menuContent li {
+  list-style: none;
+  padding: 0.3rem 0rem;
 }
 
-.menuContent li a{
-    color: white;
+.menuContent li a {
+  color: white;
 }
 
-.menuLink{
-    font-size: 1.2rem;
-    transition: all 0.3s ease-in-out;
+.menuLink {
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuLink:hover {
+  padding-left: 0.2rem;
+}
+
+.socialWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoWrap {
+  position: relative;
+  min-width: 17rem;
+  max-width: 20rem;
+  min-height: 10rem;
+}
+
+.socialContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialIcon {
+  padding: 0 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.socialIcon svg {
+  filter: invert();
+  max-width: 2.3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.socialIcon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.legal {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.legal a {
+  color: white;
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+
+.citaWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: 2rem 0rem;
+  color: white;
+}
+
+.citaText {
+  width: 35ch;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.citaButtons {
+  display: flex;
+  flex-direction: row;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  margin-top: 2rem;
+  text-align: center;
+  width: 10rem;
+  border: 1px solid white;
+  padding: 1rem;
+  margin: 2rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  border-radius: 15rem;
+}
+
+.Button:hover {
+  background: white;
+  transform: translateY(-0.2rem);
+  color: #243648;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+@media (max-width: 1200px) {
+  .menuContent {
+    display: none;
   }
-  
-  .menuLink:hover{
-    padding-left: 0.2rem;
+
+  .footerContentWrap {
+    grid-template-columns: 100%;
   }
-  
 
-.socialWrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logoWrap{
-    position: relative;
-    min-width: 17rem;
-    max-width: 20rem;
-    
-}
-
-.socialContainer{
+  .citaText {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.socialIcon{
-    padding: 0 1rem;
-    transition: all 0.3s ease-in-out;
-}
-
-.socialIcon svg{
-    filter: invert();
-    max-width:2.3rem;
-    transition: all 0.3s ease-in-out;  
-}
-
-.socialIcon:hover{
-    transform: scale(1.2);
-    cursor: pointer;
-    
-}
-
-.legal{
-    display: flex;
-    justify-content: flex-end;
     text-align: center;
+  }
+
+  .citaButtons {
+    transform: scale(0.8);
+  }
 }
 
-.legal a{
-    color: white;
-    font-size: 0.8rem;
-    padding: 1rem;
-}
-
-.citaWrap{
-    display: flex;
+@media (max-width: 400px) {
+  .legal {
+    justify-content: center;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    padding-bottom: 2rem;
+  }
+  .legal a {
+    padding: 0.5rem;
+  }
 
-    margin: 2rem 0rem;
-    color: white;
+  .citaWrap {
+    margin-bottom: 0;
+  }
+
+  .citaButtons {
+    flex-direction: column;
+  }
+
+  .Button {
+    margin: 1rem;
+  }
 }
-
-.citaText{
-    width: 35ch;
-    text-align: justify;
-    text-align-last: center;
-}
-
-.citaButtons{
-    display: flex;
-    flex-direction: row;
-}
-
-.Button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
-    margin-top: 2rem;
-    text-align: center;
-    width: 10rem;
-    border: 1px solid white;
-    padding: 1rem;
-    margin: 2rem 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
-    border-radius: 15rem; 
-}
-
-.Button:hover{
-    background: white;
-    transform: translateY(-0.2rem);
-    color: #243648;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-}
-
-@media(max-width: 1200px){
-
-    .menuContent{
-        display: none;
-    }
-
-    .footerContentWrap{ 
-        grid-template-columns: 100%;
-    }
-
-    .citaText{
-        width: 100%;
-        text-align: center;
-    }
-
-    .citaButtons{
-        transform: scale(0.8);
-    }
-
-}
-
-
-@media(max-width: 400px){
-    .legal{
-        justify-content: center;
-        flex-direction: column;
-        padding-bottom: 2rem;
-    }
-    .legal a{
-        padding: 0.5rem;
-    }
-
-    .citaWrap{
-        margin-bottom: 0;
-    }
-
-    .citaButtons{
-        flex-direction: column;
-    }
-
-    .Button{
-        margin: 1rem;
-    }
-}
-

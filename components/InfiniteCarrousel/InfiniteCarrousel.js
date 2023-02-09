@@ -10,7 +10,7 @@ export default function InfiniteCarrousel(props) {
         {/* los textos se duplican para crear el efecto  */}
         <section className={styles.cslide}>
           <div className={styles.imageWrap}>
-            <Image src={leftCuote} layout="fill" objectFit="cover" />
+            <Image src={leftCuote} alt="Quotes Icon" fill />
           </div>
           <div className={styles.slideText}>
             <SanityBlockContent
@@ -27,7 +27,7 @@ export default function InfiniteCarrousel(props) {
         </section>
         <section className={styles.cslide}>
           <div className={styles.imageWrap}>
-            <Image src={leftCuote} layout="fill" objectFit="cover" />
+            <Image src={leftCuote} alt="Quotes Icon" fill />
           </div>
           <div className={styles.slideText}>
             <SanityBlockContent
@@ -43,7 +43,7 @@ export default function InfiniteCarrousel(props) {
         </section>
         <section className={styles.cslide}>
           <div className={styles.imageWrap}>
-            <Image src={leftCuote} layout="fill" objectFit="cover" />
+            <Image src={leftCuote} alt="Quotes Icon" fill />
           </div>
           <div className={styles.slideText}>
             <SanityBlockContent
@@ -59,7 +59,7 @@ export default function InfiniteCarrousel(props) {
         </section>
         <section className={styles.cslide}>
           <div className={styles.imageWrap}>
-            <Image src={leftCuote} layout="fill" objectFit="cover" />
+            <Image src={leftCuote} alt="Quotes Icon" fill />
           </div>
           <div className={styles.slideText}>
             <SanityBlockContent
@@ -75,7 +75,7 @@ export default function InfiniteCarrousel(props) {
         </section>
         <section className={styles.cslide}>
           <div className={styles.imageWrap}>
-            <Image src={leftCuote} layout="fill" objectFit="cover" />
+            <Image src={leftCuote} alt="Quotes Icon" fill />
           </div>
           <div className={styles.slideText}>
             <SanityBlockContent
@@ -91,7 +91,7 @@ export default function InfiniteCarrousel(props) {
         </section>
         <section className={styles.cslide}>
           <div className={styles.imageWrap}>
-            <Image src={leftCuote} layout="fill" objectFit="cover" />
+            <Image src={leftCuote} alt="Quotes Icon" fill />
           </div>
           <div className={styles.slideText}>
             <SanityBlockContent
@@ -107,7 +107,7 @@ export default function InfiniteCarrousel(props) {
         </section>
         <section className={styles.cslide}>
           <div className={styles.imageWrap}>
-            <Image src={leftCuote} layout="fill" objectFit="cover" />
+            <Image src={leftCuote} alt="Quotes Icon" fill />
           </div>
           <div className={styles.slideText}>
             <SanityBlockContent
@@ -123,7 +123,7 @@ export default function InfiniteCarrousel(props) {
         </section>
         <section className={styles.cslide}>
           <div className={styles.imageWrap}>
-            <Image src={leftCuote} layout="fill" objectFit="cover" />
+            <Image src={leftCuote} alt="Quotes Icon" fill />
           </div>
           <div className={styles.slideText}>
             <SanityBlockContent
