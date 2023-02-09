@@ -15,11 +15,11 @@
 }
 
 .navLogoWrapper {
-    grid-area: logo;
-    position: relative;
-    height: 100%;
-    width: 15rem;
-    margin: 0 auto;
+  grid-area: logo;
+  position: relative;
+  height: 100%;
+  width: 15rem;
+  margin: 0 auto;
 }
 
 .linksWrapper {
@@ -174,14 +174,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent;
+
     z-index: 1;
     transition: all 1s ease-in-out;
 
     visibility: hidden;
     opacity: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
-      url(../../public/images/leyendo.jpg);
+      url(../../public/images/leyendo.webp);
     background-size: cover;
     background-position: 45% 0%;
   }
@@ -193,7 +193,7 @@
 
   .navContent {
     grid-template-areas:
-    "void"
+      "void"
       "logo"
       "menu"
       "social";
@@ -202,11 +202,11 @@
   }
 
   .navLogoWrapper {
-      position: relative;
-      width: 20rem;
-      height: 10rem;
-      filter: invert(100%);
-    
+    position: relative;
+    width: 20rem;
+    height: 10rem;
+    filter: invert(100%);
+
     padding: 0;
   }
 

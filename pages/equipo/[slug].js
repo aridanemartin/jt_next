@@ -50,14 +50,14 @@ export default function SingleDoctor(props) {
         title={`${props.author.name} | ${props.author.especialidad}`}
         desc={`${props.author.name} es miembro del equipo de doctores de Julián Tamayo.`}
         canonical={`https://www.juliantamayo.com/equipo/${props.author.slug.current}`}
-        image={mainImageProps.src}
+        image={mainImageProps?.src}
       />
       <Header image={bata} title={`${props.author.name}`} />
       <Layout>
         <div className={styles.doctorProfileWrapper}>
           <div className={styles.doctorImageWrapper}>
             <Image
-              src={mainImageProps.src}
+              src={mainImageProps?.src}
               alt={`${props.author.name} - Profile Picture`}
               fill
               style={{ objectFit: "cover" }}
@@ -236,7 +236,7 @@ export default function SingleDoctor(props) {
             >
               <div className={styles.servicesImage}>
                 <Image
-                  src={servicio1Image.src}
+                  src={servicio1Image?.src}
                   fill
                   alt={props.author.servicio1Title}
                   sizes="100vw"
@@ -273,7 +273,7 @@ export default function SingleDoctor(props) {
             >
               <div className={styles.servicesImage}>
                 <Image
-                  src={servicio2Image.src}
+                  src={servicio2Image?.src}
                   fill
                   alt={props.author.servicio2Title}
                   sizes="100vw"
@@ -310,7 +310,7 @@ export default function SingleDoctor(props) {
             >
               <div className={styles.servicesImage}>
                 <Image
-                  src={servicio3Image.src}
+                  src={servicio3Image?.src}
                   fill
                   alt={props.author.servicio3Title}
                   sizes="100vw"
@@ -345,7 +345,7 @@ export default function SingleDoctor(props) {
             >
               <div className={styles.servicesImage}>
                 <Image
-                  src={servicio4Image.src}
+                  src={servicio4Image?.src}
                   fill
                   alt={props.author.servicio4Title}
                   sizes="100vw"
@@ -380,7 +380,7 @@ export default function SingleDoctor(props) {
             >
               <div className={styles.servicesImage}>
                 <Image
-                  src={servicio5Image.src}
+                  src={servicio5Image?.src}
                   fill
                   alt={props.author.servicio5Title}
                   sizes="100vw"
@@ -415,7 +415,7 @@ export default function SingleDoctor(props) {
             >
               <div className={styles.servicesImage}>
                 <Image
-                  src={servicio6Image.src}
+                  src={servicio6Image?.src}
                   fill
                   alt={props.author.servicio6Title}
                   sizes="100vw"

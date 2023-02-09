@@ -12,16 +12,10 @@
 }
 
 .title {
-  font-family: "Staatliches";
+  font-family: "Staatliches", cursive;
   font-size: 4rem;
 
   color: white;
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: 6rem;
-
-  left: 50%;
-  top: 50%;
   transform: translate(-50%, -100%);
   text-align: center;
   position: absolute;
@@ -32,9 +26,10 @@
   max-width: 1440px;
   margin: 0 auto;
 
-  font-family: Segoe UI, Arial;
+  font-family: "Cormorant", serif;
   text-align: center;
   padding-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .postImage {
@@ -47,10 +42,6 @@
 .contentWrapper section p {
   font-size: 1.2rem;
   padding: 0rem 1rem;
-  margin-bottom: 1rem;
-}
-
-.contentWrapper section {
   margin-bottom: 1rem;
 }
 
@@ -106,7 +97,7 @@
 }
 
 .blockContent h2 {
-  font-family: "Staatliches";
+  font-family: "Staatliches", cursive;
   font-size: 2rem;
   padding: 1rem;
   margin: 0rem;

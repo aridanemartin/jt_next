@@ -10,14 +10,6 @@ import Header from "@components/Header/Header";
 import Meta from "@components/Meta/Meta";
 
 const Equipo = ({ author }) => {
-  // function setImageProps(index) {
-  //   const mainImageProps = useNextSanityImage(
-  //     sanityClient,
-  //     author[index].image
-  //   );
-  //   return mainImageProps;
-  // }
-
   const [mappedAuthors, setMappedAuthors] = useState([]);
 
   useEffect(() => {
@@ -38,7 +30,7 @@ const Equipo = ({ author }) => {
     } else {
       setMappedAuthors([]);
     }
-  }, []);
+  }, [author]);
 
   const mappedDoctors = mappedAuthors.filter(
     (author) => author.isADoctor === true
@@ -68,14 +60,7 @@ const Equipo = ({ author }) => {
                 {author.isADoctor && (
                   <Link href={`/equipo/${author.slug.current}`}>
                     <div className={styles.doctorImageWrapper}>
-                      <img
-                        src={author.mainImage}
-                        // layout="fill"
-                        // objectFit="cover"
-                        // height={null}
-                        // width={null}
-                        alt={`${author.name}`}
-                      />
+                      <img src={author.mainImage} alt={`${author.name}`} />
                     </div>
                     <div className={styles.cardText}>
                       <h2 className={styles.authorName}>{author.name}</h2>
