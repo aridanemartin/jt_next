@@ -40,13 +40,25 @@
 
 @media (max-width: 1100px) {
   .videoGallery {
-    flex-direction: column;
+    // flex-direction: column;
     .videoCard {
-      width: 100%;
+      // width: 100%;
 
       h1 {
+        display: none;
         white-space: normal;
       }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .videoGallery {
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    .videoCard {
+      width: 100%;
     }
   }
 }
