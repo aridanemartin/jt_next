@@ -3,24 +3,24 @@ import styles from "./RotatingText.module.css";
 import Link from "next/link";
 
 export default function RotatingText() {
-  const especialidades = [
-    "Diabetes y Síndrome Metabólico",
-    "Patología Tiroidea y Ecografía Tiroidea",
-    "Educación Nutricional",
-    "Diabetes Gestacional",
-    "Síndrome de Ovario Poliquístico",
-    "Salud Hormonal Femenina",
-    "Sobrecrecimiento Bacteriano",
-    "Obesidad",
-    "Alteraciones del colesterol",
-    "Videoconsulta Endocrinológica",
-    "Fertilidad y Reproducción",
-    "Trastornos Hipófosis",
-  ];
-
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
+    const especialidades = [
+      "Diabetes y Síndrome Metabólico",
+      "Patología Tiroidea y Ecografía Tiroidea",
+      "Educación Nutricional",
+      "Diabetes Gestacional",
+      "Síndrome de Ovario Poliquístico",
+      "Salud Hormonal Femenina",
+      "Sobrecrecimiento Bacteriano",
+      "Obesidad",
+      "Alteraciones del colesterol",
+      "Videoconsulta Endocrinológica",
+      "Fertilidad y Reproducción",
+      "Trastornos Hipófosis",
+    ];
+
     const interval = setInterval(() => {
       if (counter === especialidades.length - 1) {
         setCounter(0);
