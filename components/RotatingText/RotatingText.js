@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styles from "./RotatingText.module.css";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 export default function RotatingText() {
