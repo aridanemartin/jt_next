@@ -7,6 +7,10 @@
   z-index: 1;
 }
 
+.signature {
+  object-fit: cover;
+}
+
 .navContent {
   height: 100%;
   display: grid;

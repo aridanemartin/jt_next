@@ -3,7 +3,6 @@ import React from "react";
 import styles from "./PostPreview.module.scss";
 
 export const PostPreview = ({ post, link }) => {
-  console.log("===postCategories`==>", post.categories);
   return (
     <Link key={post.slug.current} href={link}>
       <div className={styles.postPreviewWrapper} key={post._id}>

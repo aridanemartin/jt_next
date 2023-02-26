@@ -36,8 +36,6 @@ const Equipo = ({ author }) => {
     (author) => author.isADoctor === true
   );
 
-  console.log(mappedDoctors);
-
   return (
     <>
       <Meta
@@ -54,7 +52,6 @@ const Equipo = ({ author }) => {
       <Layout>
         <section className={styles.cardWrapper}>
           {mappedDoctors.map((author) => {
-            console.log(author.mainImage);
             return (
               <div className={styles.singleCard} key={author.slug.current}>
                 {author.isADoctor && (

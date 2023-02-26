@@ -43,7 +43,7 @@ export default function SingleDoctor(props) {
     sanityClient,
     props.author.servicio6Image
   );
-  console.log(props.author);
+
   return (
     <div>
       <Meta

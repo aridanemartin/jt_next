@@ -1,129 +1,118 @@
 .Bio {
-    position: relative;
-    display: grid;
-    grid-template-areas: "foto title" "foto text" "foto button" "logos logos";
-    grid-template-columns: 50% 50%;
-    margin: 0 auto;
-    margin-top: 65px;
-    margin-bottom: 40px;
-    max-width: 1140px;
-    height: auto;
-    padding-top: 3rem;
-
-    
+  position: relative;
+  display: grid;
+  grid-template-areas: "foto title" "foto text" "foto button" "logos logos";
+  grid-template-columns: 50% 50%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  max-width: 1140px;
+  height: auto;
+  padding: 3rem 0rem;
 }
 .Bio__image {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: foto;
-    /* clip-path: circle(40% at 50% 50%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: foto;
+  /* clip-path: circle(40% at 50% 50%); */
 }
 .Bio__title {
-    font-family: 'Cormorant';
-    text-align: center;
-    grid-area: title;
+  font-family: "Cormorant";
+  text-align: center;
+  grid-area: title;
 
-    margin: 0 auto;
-    max-width: 30rem;
-    padding: 1rem;
-    font-size: 1.8rem;
-    
-    color: #4A6F94;
-    
+  margin: 0 auto;
+  max-width: 30rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+
+  color: #4a6f94;
 }
 
-.Bio__title strong{
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #243648;
+.Bio__title strong {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #243648;
 }
 
 .Bio__text {
-    font-family: Source Sans Pro;
-    grid-area: text;
-    margin: 0 auto;
+  font-family: Source Sans Pro;
+  grid-area: text;
+  margin: 0 auto;
 
-    padding: 2rem 1rem 3rem 1rem;
-    text-align: center;
-    max-width: 50ch;
-    font-size: 1rem;
-    text-align:justify;
-    text-align-last: center;
-    
+  padding: 2rem 1rem 3rem 1rem;
+  text-align: center;
+  max-width: 50ch;
+  font-size: 1rem;
+  text-align: justify;
+  text-align-last: center;
 }
 
 .Bio__button {
-    grid-area: button;
-    
+  grid-area: button;
 }
 
 .Bio__logos {
-    max-width: 800px;
-    margin: 0 auto;
-    grid-area: logos;
-    margin-top: 4rem;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  grid-area: logos;
+  margin-top: 4rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .Bio__logo {
-    position: relative;
-    width: 6rem;
-    height: 3rem;
-    margin: 1rem 1rem;
-    
+  position: relative;
+  width: 6rem;
+  height: 3rem;
+  margin: 1rem 1rem;
 }
 
 @media (max-width: 1000px) {
-
-.Bio {
+  .Bio {
     display: grid;
     grid-template-areas: "foto" "title" "text" "button" "logos";
     grid-template-columns: 100%;
     grid-template-rows: 30rem auto auto auto auto;
     margin: 0;
-    
-    
-}
-.Bio__image {
+    padding: 1rem 1rem 3rem 1rem;
+  }
+  .Bio__image {
     grid-area: foto;
     margin: 0 auto;
     width: 100%;
     /* clip-path: circle(40% at 50% 50%); */
     clip-path: none;
-}
+  }
 
-.Bio__title strong {
+  .Bio__title strong {
     font-size: 1.8rem;
-}
+  }
 
-.Bio__title {
-    
+  .Bio__title {
     padding: 1rem;
     font-size: 1.2rem;
-}
+  }
 
-.Bio__text {
+  .Bio__text {
     padding: 1rem;
     font-size: 1rem;
-}
-.Bio__button {
+  }
+  .Bio__button {
     margin-top: 1rem;
-}
+  }
 
-.Bio__logos {
+  .Bio__logos {
     display: none;
-}
+  }
 
-.Bio__logos img {
+  .Bio__logos img {
     padding: 0.9rem;
     margin: 0 auto;
-}
-
+  }
 }

@@ -10,9 +10,11 @@ import { useEffect, useState } from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import Meta from "@components/Meta/Meta";
 import { PostPreview } from "@components/PostPreview/PostPreview";
+import AdBanner from "@components/AdBanner/AdBanner";
 
-export default function Home({ posts }) {
+export default function Home({ posts, adbanner }) {
   const [mappedPosts, setMappedPosts] = useState([]);
+  console.log(adbanner);
 
   useEffect(() => {
     if (posts.length) {
@@ -48,12 +50,20 @@ export default function Home({ posts }) {
         image="https://www.juliantamayo.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportada4.a9e48235.jpg&w=1920&q=75"
       />
       <HeroTemplate img={indexCover} />
+
       <Layout>
         <IntroBio />
       </Layout>
-
+      {adbanner.active && (
+        <AdBanner
+          title={adbanner.title}
+          description={adbanner.description}
+          link={adbanner.link}
+          linkText={adbanner.linkText}
+          image={adbanner.image}
+        />
+      )}
       <RotatingText />
-
       <Layout>
         <Separador
           title="Últimos Posts"
@@ -87,9 +97,16 @@ export const getServerSideProps = async () => {
     categories[]->
   }`);
   const url = `${process.env.SANITY_URL}query=${query}`;
-
   const data = await fetch(url).then((res) => res.json());
   const posts = data.result || [];
 
-  return { props: { posts } };
+  const query2 = encodeURIComponent(
+    `*[ _type == "pagePersonalization"]{ name, adbanner{..., "image": image.asset->url} }
+    `
+  );
+  const url2 = `${process.env.SANITY_URL}query=${query2}`;
+  const data2 = await fetch(url2).then((res) => res.json());
+  const { adbanner } = data2.result[0] || [];
+
+  return { props: { posts, adbanner } };
 };

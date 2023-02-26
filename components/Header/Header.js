@@ -13,6 +13,7 @@ export default function Header(props) {
         className={styles.imageHero}
         alt={title}
         quality={30}
+        priority
       />
     </div>
   );

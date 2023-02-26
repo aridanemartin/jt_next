@@ -35,14 +35,10 @@ export default function Nav() {
         <div className={styles.navContent}>
           <div className={styles.navLogoWrapper}>
             <Image
-              // className={styles.signature}
+              className={styles.signature}
               src={navLogo}
               alt="lalalal"
-              layout="fill"
-              objectFit="cover"
-              // layout="intrinsic"
-              // height={150}
-              // width={300}
+              fill
             />
           </div>
 

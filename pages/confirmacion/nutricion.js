@@ -7,7 +7,6 @@ import Link from "next/link";
 import { formatLink } from "../../helpers";
 
 export default function Nutricion({ links }) {
-  console.log(links);
   return (
     <>
       <Header title="Su cita ha sido confirmada" image={banner} />

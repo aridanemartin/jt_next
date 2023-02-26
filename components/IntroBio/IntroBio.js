@@ -68,6 +68,7 @@ export default function IntroBio() {
             src={logo8}
             alt={logo8}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -76,6 +77,7 @@ export default function IntroBio() {
             src={logo9}
             alt={logo9}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -84,6 +86,7 @@ export default function IntroBio() {
             src={logo10}
             alt={logo10}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -92,6 +95,7 @@ export default function IntroBio() {
             src={logo3}
             alt={logo3}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -100,6 +104,7 @@ export default function IntroBio() {
             src={logo4}
             alt={logo4}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -108,6 +113,7 @@ export default function IntroBio() {
             src={logo1}
             alt={logo1}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -116,6 +122,7 @@ export default function IntroBio() {
             src={logo2}
             alt={logo2}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -124,6 +131,7 @@ export default function IntroBio() {
             src={logo5}
             alt={logo5}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -132,6 +140,7 @@ export default function IntroBio() {
             src={logo6}
             alt={logo6}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -140,6 +149,7 @@ export default function IntroBio() {
             src={logo7}
             alt={logo7}
             fill
+            sizes="10vw"
             style={{ objectFit: "contain" }}
           />
         </div>
