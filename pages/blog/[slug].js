@@ -7,15 +7,12 @@ import { useNextSanityImage } from "next-sanity-image";
 
 import styles from "@styles/SinglePost.module.css";
 import Meta from "@components/Meta/Meta";
+import SanityBlock from "@components/SanityBlock/SanityBlock";
+import Layout from "@components/Layout/Layout";
 
 export const SinglePost = (data) => {
   const mainImageProps = useNextSanityImage(sanityClient, data.mainImage);
-
   const authorImageProps = useNextSanityImage(sanityClient, data.author.image);
-
-  const image1Props = useNextSanityImage(sanityClient, data.image1);
-
-  const image2Props = useNextSanityImage(sanityClient, data.image2);
 
   return (
     <>
@@ -61,66 +58,11 @@ export const SinglePost = (data) => {
             </div>
           </div>
         </Link>
-
-        {data.body1 && (
-          <section className={styles.blockContent}>
-            <BlockContent blocks={data.body1} />
-          </section>
-        )}
-
-        {data.image1 && (
-          <div className={styles.postImage}>
-            <Image
-              src={image1Props?.src}
-              alt={`${data.title} - Foto de artículo *2`}
-              fill
-              sizes="100vw"
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        )}
-
-        {data.body2 && (
-          <section className={styles.blockContent}>
-            <BlockContent blocks={data.body2} />
-          </section>
-        )}
-
-        {data.image2 && (
-          <div className={styles.postImage}>
-            <Image
-              src={image2Props?.src}
-              alt={`${data.title} - Foto de artículo *2`}
-              fill
-              sizes="100vw"
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        )}
-
-        {data.body3 ? (
-          <section className={styles.blockContent}>
-            <BlockContent blocks={data.body3} />
-          </section>
-        ) : (
-          ""
-        )}
-
-        <div className={styles.linksWrapper}>
-          <Link
-            href={`/equipo/${data.author.slug.current}#cita`}
-            className={styles.concertarCita}
-          >
-            Concertar cita con {data.author.name}
-          </Link>
-          <Link href="/blog" className={styles.backToBlog}>
-            Volver al blog
-          </Link>
-        </div>
+        <Layout small>
+          {data.body.map((block) => (
+            <SanityBlock key={block._key} sanityContent={block} />
+          ))}
+        </Layout>
       </article>
     </>
   );
@@ -140,6 +82,7 @@ export const getServerSideProps = async (pageContext) => {
   const query =
     encodeURIComponent(`*[ _type == "post" && slug.current == "${pageSlug}"]{
         title,
+        body,
         mainImage,
         description,
         body1,
@@ -157,6 +100,8 @@ export const getServerSideProps = async (pageContext) => {
   return {
     props: {
       data: post,
+      slug: pageSlug,
+      body: post.body,
       body3: post.body3,
       title: post.title,
       mainImage: post.mainImage,

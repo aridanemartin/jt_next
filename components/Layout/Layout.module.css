@@ -1,4 +1,9 @@
-.layoutContainer{
-    max-width: 1440px;
-    margin: 0 auto;
+.layoutContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.smallLayout {
+  max-width: 765px;
+  margin: 0 auto;
 }

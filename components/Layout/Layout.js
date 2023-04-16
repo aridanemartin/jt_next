@@ -1,11 +1,9 @@
-import Nav from '@components/Nav/Nav';
-import styles from './Layout.module.css';
+import styles from "./Layout.module.css";
 
-
-export default function Layout({ children }) {
-    return (
-    <div className={styles.layoutContainer}>
-        <main>{children}</main>
+export default function Layout({ children, small }) {
+  return (
+    <div className={small ? styles.smallLayout : styles.layoutContainer}>
+      <main>{children}</main>
     </div>
-    )
+  );
 }
