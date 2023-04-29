@@ -30,13 +30,10 @@ export const SinglePost = (data) => {
             style={{
               objectFit: "cover",
             }}
-            quality={40}
+            quality={60}
           />
         </div>
-      </div>
-      <Layout></Layout>
-      <article className={styles.contentWrapper}>
-        <Layout small>
+        <section className={styles.titleSectionWrapper}>
           <h2 className={styles.title}>{data.title}</h2>
           <div className={styles.subtitle}>
             <Link href={`/equipo/${data.author.slug.current}#conoceme`}>
@@ -63,6 +60,11 @@ export const SinglePost = (data) => {
               <p className={styles.time}>| {data.timeToRead} min de lectura</p>
             </div>
           </div>
+        </section>
+      </div>
+      <Layout></Layout>
+      <article className={styles.contentWrapper}>
+        <Layout small>
           {data.body.map((block) => (
             <>
               {console.log(block)}

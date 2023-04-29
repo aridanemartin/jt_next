@@ -188,6 +188,7 @@
       url(../../public/images/leyendo.webp);
     background-size: cover;
     background-position: 45% 0%;
+    z-index: 2;
   }
 
   .navOpen {
