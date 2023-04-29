@@ -9,6 +9,8 @@ import Meta from "@components/Meta/Meta";
 import SanityBlock from "@components/SanityBlock/SanityBlock";
 import Layout from "@components/Layout/Layout";
 
+import timeToReadIcon from "../../public/images/icons/clock.png";
+
 export const SinglePost = (data) => {
   const mainImageProps = useNextSanityImage(sanityClient, data.mainImage);
   const authorImageProps = useNextSanityImage(sanityClient, data.author.image);
@@ -57,7 +59,20 @@ export const SinglePost = (data) => {
               </div>
             </Link>
             <div className={styles.timeToRead}>
-              <p className={styles.time}>| {data.timeToRead} min de lectura</p>
+              <div className={styles.timeToRead__icon}>
+                <Image
+                  src={timeToReadIcon}
+                  alt="Time to read icon"
+                  fill
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  quality={30}
+                />
+              </div>
+              <p className={styles.time}>
+                <em>{data.timeToRead} min de lectura</em>
+              </p>
             </div>
           </div>
         </section>
@@ -67,7 +82,6 @@ export const SinglePost = (data) => {
         <Layout small>
           {data.body.map((block) => (
             <>
-              {console.log(block)}
               <SanityBlock key={block._key} sanityContent={block} />
             </>
           ))}

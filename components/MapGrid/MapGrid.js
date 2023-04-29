@@ -1,7 +1,7 @@
 import LinkButton from "@components/LinkButton/LinkButton";
 import styles from "./MapGrid.module.css";
 
-export default function MapGrid() {
+export default function MapGrid({ address }) {
   return (
     <div className={styles.mapGridWrapper}>
       <div className={styles.mapWrapper}>
@@ -18,21 +18,31 @@ export default function MapGrid() {
         <div className={styles.textWrapper}>
           <h2>Dirección</h2>
           <address>
-            Calle Presidente Alvear 52,
+            {address.address1}
             <br />
-            Planta 6 izquierda
+            {address.address2}
             <br />
-            Las Palmas de Gran Canaria.
+            {address.providence}
             <br />
-            CP 35007
+            {address.zipCode}
             <br />
-            Tel 928499900
-            <br />
+            {address.phone ? (
+              <>
+                {address.phone}
+                <br />
+              </>
+            ) : null}
+            {address.mail ? (
+              <>
+                {address.mail}
+                <br />
+              </>
+            ) : null}
           </address>
         </div>
         <div className={styles.buttonSectionWrapper}>
-        <h2>Reserva tu cita aquí</h2>
-        <div className={styles.buttonWrapper}>
+          <h2>Reserva tu cita aquí</h2>
+          <div className={styles.buttonWrapper}>
             <LinkButton
               className={styles.button}
               link="/equipo"
@@ -56,7 +66,6 @@ export default function MapGrid() {
               fullWidth
             />
           </div>
-          
         </div>
       </div>
     </div>

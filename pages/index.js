@@ -14,7 +14,6 @@ import AdBanner from "@components/AdBanner/AdBanner";
 
 export default function Home({ posts, adbanner }) {
   const [mappedPosts, setMappedPosts] = useState([]);
-  console.log(adbanner);
 
   useEffect(() => {
     if (posts.length) {
