@@ -1,11 +1,18 @@
 import Header from "@components/Header/Header";
 import Layout from "@components/Layout/Layout";
 import banner from "../../public/images/contacto2.jpg";
-import styles from "../../styles/Legal.module.css"
+import styles from "../../styles/Legal.module.css";
+import Meta from "@components/Meta/Meta";
 
 export default function PoliticaDePrivacidad() {
   return (
     <>
+      <Meta
+        title="Dr. Julián Tamayo | Política de Privacidad"
+        desc="Política de Privacidad | Julián Tamayo | Endocrino especialista en el cuidado de enfermedades crónicas."
+        canonical="https://www.juliantamayo.com/legal/politica-de-privacidad"
+        image="https://www.juliantamayo.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportada4.a9e48235.jpg&w=1920&q=75"
+      />
       <Header title="Política de Privacidad" image={banner} />
       <Layout>
         <div className={styles.legalText}>

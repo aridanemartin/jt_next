@@ -118,7 +118,7 @@
 
   color: white;
   text-align: center;
-  width: 10rem;
+  width: fit-content;
   border: 1px solid white;
   padding: 1rem;
   margin: 2rem 1rem;

@@ -1,7 +1,11 @@
 import LinkButton from "@components/LinkButton/LinkButton";
 import styles from "./MapGrid.module.css";
 
-export default function MapGrid({ address }) {
+export default function MapGrid({ address, workWithUs }) {
+  const { isWorkWithUsEnabled, workWithUsEmail } = workWithUs;
+
+  console.log(workWithUsEmail, isWorkWithUsEnabled);
+
   return (
     <div className={styles.mapGridWrapper}>
       <div className={styles.mapWrapper}>
@@ -54,7 +58,7 @@ export default function MapGrid({ address }) {
             <LinkButton
               className={styles.button}
               link="https://calendly.com/juliantamayoendocrino/visitaurgente"
-              text="Solicitar Cita Urgente (En menos de 72h)"
+              text="Solicitar Cita Urgente"
               fullWidth
             />
           </div>
@@ -66,6 +70,16 @@ export default function MapGrid({ address }) {
               fullWidth
             />
           </div>
+          {isWorkWithUsEnabled && workWithUsEmail && (
+            <div className={styles.buttonWrapper}>
+              <LinkButton
+                className={styles.button}
+                link={`mailto:${workWithUsEmail}?subject=Julián Tamayo | Trabaja con Nosotros`}
+                text="Trabaja con Nosotros"
+                fullWidth
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

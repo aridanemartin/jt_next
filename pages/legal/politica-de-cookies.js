@@ -1,15 +1,22 @@
 import Header from "@components/Header/Header";
 import Layout from "@components/Layout/Layout";
 import banner from "../../public/images/contacto2.jpg";
-import styles from "../../styles/Legal.module.css"
+import styles from "../../styles/Legal.module.css";
+import Meta from "@components/Meta/Meta";
 
 export default function PoliticaDeCookies() {
   return (
     <>
+      <Meta
+        title="Dr. Julián Tamayo | Política de Cookies"
+        desc="Política de Cookies | Julián Tamayo | Endocrino especialista en el cuidado de enfermedades crónicas."
+        canonical="https://www.juliantamayo.com/legal/politica-de-cookies"
+        image="https://www.juliantamayo.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportada4.a9e48235.jpg&w=1920&q=75"
+      />
       <Header title="Política de Cookies" image={banner} />
       <Layout>
         <div className={styles.legalText}>
-          <h1>Política de Cookies</h1>
+          <h2 className={styles.legalTextTitle}>Política de Cookies</h2>
           <p>
             El sitio Web utiliza un analizador de tráfico que emplea pequeños
             archivos de información denominados y conocidos como “cookies” que

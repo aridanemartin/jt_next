@@ -40,7 +40,7 @@ const Equipo = ({ author }) => {
     <>
       <Meta
         title="Equipo | Dr. Julián Tamayo"
-        desc="Conoce en profundidad al equipo del Doctor Julián Tamayo"
+        desc="Conoce en profundidad al equipo del Doctor Julián Tamayo. Endocrino con más de 15 años de experiencia como profesional en el ejercicio de la medicina."
         canonical="https://www.juliantamayo.com/equipo"
         image="https://www.juliantamayo.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportada4.a9e48235.jpg&w=1920&q=75"
       />
