@@ -1,7 +1,8 @@
 import styles from "./IntroBio.module.css";
 
-import fotoDesktop from "../../public/images/portadaIndex.webp";
-import fotoMobile from "../../public/images/portadaIndex2.jpg";
+// TODO: las imágenes serán importadas de Sanity temporalmente
+// import fotoDesktop from "../../public/images/portadaIndex.webp";
+// import fotoMobile from "../../public/images/portadaIndex2.jpg";
 import Image from "next/image";
 import LinkButton from "@components/LinkButton/LinkButton";
 
@@ -18,27 +19,19 @@ import logo10 from "../../public/images/logos/universidadDeCordoba.png";
 
 import { useWindowSize } from "hooks/useWindowDimensions";
 
-export default function IntroBio() {
+export default function IntroBio({ CDNDesktopImage, CDNMobileImage }) {
   const size = useWindowSize();
+  const isDesktop = size.width > 1100;
 
   return (
     <div className={styles.Bio} id="bio">
       <div className={styles.Bio__image}>
-        {size.width > 1100 ? (
-          <Image
-            src={fotoDesktop}
-            alt="Julian Tamayo || Endocrino en Las Palmas"
-            fill
-            style={{ objectFit: "cover" }}
-          />
-        ) : (
-          <Image
-            src={fotoMobile}
-            alt="Julian Tamayo || Endocrino en Las Palmas"
-            fill
-            style={{ objectFit: "cover" }}
-          />
-        )}
+        <Image
+          src={isDesktop ? CDNDesktopImage : CDNMobileImage}
+          alt="Julian Tamayo || Endocrino en Las Palmas (Desktop)"
+          fill
+          style={{ objectFit: "cover" }}
+        />
       </div>
       <h2 className={styles.Bio__title}>
         <strong>Doctor Julián Tamayo</strong> <br /> Endocrinología y Nutrición

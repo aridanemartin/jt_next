@@ -56,6 +56,7 @@
 
         h2 {
           color: white;
+          font-family: "Cormorant", serif;
           font-size: 2.5rem;
           margin: 1rem 0rem;
 
@@ -79,7 +80,8 @@
       }
 
       &Button {
-        font-family: "Cormorant", serif;
+        font-family: "Cormorant";
+        font-weight: 700;
         grid-area: button;
         font-size: 1.2rem;
         margin: 0rem 1rem;
@@ -145,11 +147,12 @@
         &Button {
           grid-area: button;
           font-size: 1rem;
+          font-weight: 500;
           padding: 0.5rem 1rem;
           width: calc(100% - 2rem);
           text-transform: uppercase;
           background: #243648;
-          border: none;
+
           color: #fff;
           cursor: pointer;
           border-radius: 15rem;

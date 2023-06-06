@@ -16,7 +16,7 @@ export default function PoliticaDePrivacidad() {
       <Header title="Política de Privacidad" image={banner} />
       <Layout>
         <div className={styles.legalText}>
-          <h1>POLÍTICA DE PRIVACIDAD</h1>
+          <h2 className={styles.legalTextTitle}>POLÍTICA DE PRIVACIDAD</h2>
           <p>Última actualización: 16-04-2022</p>
           <br />
           <p>

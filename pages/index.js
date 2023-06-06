@@ -12,8 +12,9 @@ import Meta from "@components/Meta/Meta";
 import { PostPreview } from "@components/PostPreview/PostPreview";
 import AdBanner from "@components/AdBanner/AdBanner";
 
-export default function Home({ posts, adbanner }) {
+export default function Home({ posts, adbanner, introImage }) {
   const [mappedPosts, setMappedPosts] = useState([]);
+  const { imageDesktop, imageMobile } = introImage;
 
   useEffect(() => {
     if (posts.length) {
@@ -51,7 +52,7 @@ export default function Home({ posts, adbanner }) {
       <HeroTemplate img={indexCover} />
 
       <Layout>
-        <IntroBio />
+        <IntroBio CDNDesktopImage={imageDesktop} CDNMobileImage={imageMobile} />
       </Layout>
       {adbanner.active && (
         <AdBanner
@@ -100,12 +101,12 @@ export const getServerSideProps = async () => {
   const posts = data.result || [];
 
   const query2 = encodeURIComponent(
-    `*[ _type == "pagePersonalization"]{ name, adbanner{..., "image": image.asset->url} }
+    `*[ _type == "pagePersonalization"]{ name, adbanner{..., "image": image.asset->url}, introImage{"imageDesktop": imageDesktop.asset->url, "imageMobile": imageMobile.asset->url}  }
     `
   );
   const url2 = `${process.env.SANITY_URL}query=${query2}`;
   const data2 = await fetch(url2).then((res) => res.json());
-  const { adbanner } = data2.result[0] || [];
+  const { adbanner, introImage } = data2.result[0] || [];
 
-  return { props: { posts, adbanner } };
+  return { props: { posts, adbanner, introImage } };
 };
