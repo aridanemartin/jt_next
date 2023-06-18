@@ -18,7 +18,7 @@ export default function AdBanner({
           <Image
             className={styles.AdBanner__image}
             src={image}
-            alt="Anuncio"
+            alt={`Dr. Julián Tamayo | ${title}`}
             fill
           />
           <div className={styles.AdBanner__overlay}>
@@ -34,7 +34,7 @@ export default function AdBanner({
                 <Image
                   className={styles.AdBanner__firma}
                   src={firma2}
-                  alt="Anuncio"
+                  alt="Doctor Julián Tamayo | Signature"
                 />
               </div>
             </div>

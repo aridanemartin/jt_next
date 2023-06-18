@@ -165,7 +165,6 @@
     position: fixed;
   } */
 
-  .signature,
   .link,
   .socialIcon {
     filter: invert(100%) sepia(3%) saturate(14%) hue-rotate(342deg)

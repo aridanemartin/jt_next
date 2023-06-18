@@ -37,7 +37,7 @@ export default function Nav() {
             <Image
               className={styles.signature}
               src={navLogo}
-              alt="lalalal"
+              alt="Julián Tamayo | Endocrino - Firma"
               fill
             />
           </div>

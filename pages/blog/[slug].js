@@ -10,6 +10,7 @@ import SanityBlock from "@components/SanityBlock/SanityBlock";
 import Layout from "@components/Layout/Layout";
 
 import timeToReadIcon from "../../public/images/icons/clock.png";
+import { enhanceAltDescription } from "helpers/enhanceAltDescription";
 
 export const SinglePost = (data) => {
   const mainImageProps = useNextSanityImage(sanityClient, data.mainImage);
@@ -27,7 +28,15 @@ export const SinglePost = (data) => {
           <Image
             src={mainImageProps?.src}
             className={styles.imageHero}
-            alt="Article Banner"
+            alt={enhanceAltDescription(
+              data.title +
+                " | " +
+                data.author.name +
+                " - " +
+                data.author.especialidad
+            )}
+            loading="eager"
+            priority
             fill
             style={{
               objectFit: "cover",

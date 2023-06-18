@@ -1,8 +1,5 @@
 import styles from "./IntroBio.module.css";
 
-// TODO: las imágenes serán importadas de Sanity temporalmente
-// import fotoDesktop from "../../public/images/portadaIndex.webp";
-// import fotoMobile from "../../public/images/portadaIndex2.jpg";
 import Image from "next/image";
 import LinkButton from "@components/LinkButton/LinkButton";
 

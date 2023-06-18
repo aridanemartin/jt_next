@@ -46,7 +46,7 @@ export default function Footer() {
               src={firmaBlancaCorta}
               fill
               quality={25}
-              alt="Julián Tamayo - Firma Corta"
+              alt="Julián Tamayo - Endocrino en Las Palmas | Firma Corta"
             />
           </div>
           <div className={styles.socialContainer}>
