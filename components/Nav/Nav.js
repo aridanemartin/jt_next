@@ -47,7 +47,7 @@ export default function Nav() {
               <Link href="/">INICIO</Link>
             </li>
             <li onClick={toggle} className={styles.link}>
-              <Link href="/equipo/dr-julian-tamayo#conoceme">CONÓCEME</Link>
+              <Link href="/equipo/dr-julian-tamayo-endocrino">CONÓCEME</Link>
             </li>
             <li onClick={toggle} className={styles.link}>
               <Link href="/blog">BLOG</Link>

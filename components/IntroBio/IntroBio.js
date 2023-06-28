@@ -50,7 +50,7 @@ export default function IntroBio({ CDNDesktopImage, CDNMobileImage }) {
         metabolismo y el eje hormonal.
       </p>
       <div className={styles.Bio__button}>
-        <LinkButton text="Conóceme" link="/equipo/dr-julian-tamayo#conoceme" />
+        <LinkButton text="Conóceme" link="/equipo/dr-julian-tamayo-endocrino" />
       </div>
       <div className={styles.Bio__logos}>
         <div className={styles.Bio__logo}>

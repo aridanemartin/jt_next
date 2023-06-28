@@ -19,14 +19,14 @@ export const PressGallery = ({ data, sanityClient, author }) => {
         text={`A continuación podrás ver algunas las apariciones en prensa de ${author}`}
       />
       <div className={styles.pressGallery}>
-        {data.map((publication, index) => {
+        {data.map((publication) => {
           return publication !== null ? (
             <article className={styles.articleCard} key={publication?.title}>
               <Link href={publication?.link} key={publication?.title}>
                 <h1>{publication?.title}</h1>
                 <p>{publication?.description}</p>
                 <div className={styles.previewImage}>
-                  {publication.image && (
+                  {publication?.image && (
                     <Image
                       src={imageUrlFor(publication?.image).url()}
                       alt={publication?.title}

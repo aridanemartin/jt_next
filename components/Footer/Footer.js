@@ -16,10 +16,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/equipo/dr-julian-tamayo#conoceme"
-                className={styles.menuLink}
-              >
+              <Link href="/equipo/dr-julian-tamayo" className={styles.menuLink}>
                 Conóceme
               </Link>
             </li>

@@ -49,7 +49,11 @@ export default function SingleDoctor(props) {
       <Meta
         title={`${props.author.name} | ${props.author.especialidad}`}
         desc={`${props.author.name} es miembro del equipo de doctores de Julián Tamayo. Endocrino especialista en enfermedades crónicas.`}
-        canonical={`https://www.juliantamayo.com/equipo/${props.author.slug.current}`}
+        canonical={
+          props.author.slug?.current
+            ? `https://www.juliantamayo.com/equipo/${props.author.slug.current}`
+            : ""
+        }
         image={mainImageProps?.src}
       />
       <Header image={bata} title={`${props.author.name}`} />
