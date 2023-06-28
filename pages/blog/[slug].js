@@ -47,7 +47,7 @@ export const SinglePost = (data) => {
         <section className={styles.titleSectionWrapper}>
           <h2 className={styles.title}>{data.title}</h2>
           <div className={styles.subtitle}>
-            <Link href={`/equipo/${data.author.slug.current}#conoceme`>
+            <Link href={`/equipo/${data.author.slug.current}`}>
               <div className={styles.author}>
                 <div className={styles.author__text}>
                   <p className={styles.name}>{data.author.name}</p>

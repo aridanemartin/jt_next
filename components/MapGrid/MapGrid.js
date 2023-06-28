@@ -4,8 +4,6 @@ import styles from "./MapGrid.module.css";
 export default function MapGrid({ address, workWithUs }) {
   const { isWorkWithUsEnabled, workWithUsEmail } = workWithUs;
 
-  console.log(workWithUsEmail, isWorkWithUsEnabled);
-
   return (
     <div className={styles.mapGridWrapper}>
       <div className={styles.mapWrapper}>
