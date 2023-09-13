@@ -46,7 +46,7 @@ export default function AvisoLegal() {
               CANARIA, Las Palmas
             </li>
             <li>Correo electrónico: endocrino@juliantamayo.com</li>
-            <li>Teléfono: 645111171</li>
+            <li>Teléfono: 682483878</li>
           </ul>
           <h2>USUARIAS Y USUARIOS:</h2>
           <p>
